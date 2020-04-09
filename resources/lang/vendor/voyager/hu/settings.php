@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'usage_help'           => 'Így megkaphatja az egyes beállítások értékét a webhely bármely pontján: ',
+    'save'                 => 'Beállítások mentése',
+    'new'                  => 'Új beállítás',
+    'help_name'            => 'Beállítás neve: pl Admin Cím',
+    'help_key'             => 'Beállítási kulcs: admin_cim',
+    'help_option'          => '(opcionális, ugyanazon beállítások mint a hozzá tartozó form-mezőnek)',
+    'add_new'              => 'Új beállítás hozzáadása',
+    'delete_question'      => 'Biztosan törölni akarja a :setting beállítást?',
+    'delete_confirm'       => 'Igen, törlöm a beállítást',
+    'successfully_created' => 'Beállítás sikeresen létrehozva',
+    'successfully_saved'   => 'Beállítás sikeresen elmentve',
+    'successfully_deleted' => 'Beállítás sikeresen törölve',
+    'already_at_top'       => 'Ez már most is a lista tetején található',
+    'already_at_bottom'    => 'Ez már most is a lista alján található',
+    'key_already_exists'   => 'A :key kulcs már létezik',
+    'moved_order_up'       => ':name beállítás feljebb mozgatva.',
+    'moved_order_down'     => ':name beállítás lejjebb mozgatva.',
+    'successfully_removed' => ':name érték sikeresen eltávolítva',
+    'group_general'        => 'Általános',
+    'group_admin'          => 'Admin',
+    'group_site'           => 'Oldal',
+    'group'                => 'Csoport',
+    'help_group'           => 'Jelen beállításhoz tartozó csoport',
+];

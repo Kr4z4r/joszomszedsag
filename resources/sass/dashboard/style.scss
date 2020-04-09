@@ -1,0 +1,265 @@
+@import "../variables";
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: $light_grey;
+}
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: $light_grey;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+.col {
+  flex-basis: unset;
+}
+.vertical-nav-menu {
+  li {
+    a {
+      color: $black;
+      &:hover {
+        background: rgba(139,0,0,0.2);
+      }
+      &.mm-active {
+        background: $dark_red;
+        color: $white;
+      }
+    }
+  }
+  i {
+    &.metismenu-state-icon {
+      opacity: 1;
+    }
+    &.metismenu-icon {
+      opacity: 1;
+    }
+  }
+}
+.app-header {
+  .app-header__logo {
+    @media screen and (max-width: 991.98px) {
+      display: flex;
+    }
+    .header__pane {
+      @media screen and (max-width: 991.98px) {
+        display: none;
+      }
+    }
+    .logo-src {
+      background: none;
+      width: auto;
+      height: 100%;
+      max-height: 55px;
+      svg {
+        width: auto;
+        height: 100%;
+        padding: 0 10px 0 0;
+      }
+      img {
+        width: auto;
+        height: 100%;
+        padding: 0 10px 0 0;
+      }
+    }
+  }
+  .app-header__menu {
+    @media screen and (max-width: 991.98px) {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+.ui-theme-settings {
+  .btn-open-options {
+    left: -90px;
+    bottom: 65px;
+  }
+}
+.app-header__content {
+  .widget-content-left {
+    .btn {
+      box-shadow: none;
+    }
+  }
+}
+button {
+  &:focus {
+    background: transparent;
+  }
+}
+.hamburger {
+  .hamburger-inner {
+    background-color: $red;
+    &:before {
+      background-color: $red;
+    }
+    &:after {
+      background-color: $red;
+    }
+  }
+  &.is-active {
+    .hamburger-inner {
+      background-color: $red;
+      &:before {
+        background-color: $red;
+      }
+      &:after {
+        background-color: $red;
+      }
+    }
+  }
+}
+.app-page-title {
+  div:not(.page-title-icon):not(.page-title-wrapper):not(.page-title-heading):not(.page-title-subheading) {
+    font-size: 22px;
+    font-weight: bold;
+    color: $dark_red;
+    opacity: 1;
+    @media (max-width: 767px) {
+      display: inline-block;
+      width: auto;
+      max-width: calc(100% - 87px);
+    }
+  }
+  div {
+    &.page-title-subheading {
+      font-size: 18px;
+      color: $black;
+      opacity: 1;
+    }
+  }
+  .page-title-icon {
+    background: $dark_red;
+    i {
+      color: $white;
+      font-weight: bold;
+    }
+    @media (max-width: 991.98px) {
+      display: inline-block;
+      width: auto;
+      vertical-align: top;
+    }
+  }
+}
+.app-header-right {
+  .btn-floating, .btn-large, .btn-small, .btn {
+    &:focus {
+      background: transparent;
+    }
+    &:hover {
+      background: transparent;
+    }
+  }
+  .widget-heading {
+    opacity: 1;
+    color: $black;
+    font-weight: bold;
+  }
+  .widget-heading {
+    opacity: 1;
+    color: $black;
+  }
+}
+.app-footer {
+  @media screen and (max-width: 991.98px) {
+    height: auto;
+  }
+  .app-footer__inner {
+    @media screen and (max-width: 991.98px) {
+      flex-direction: column;
+      columns: 1;
+      height: auto;
+      min-height: 60px;
+    }
+    .app-footer-left {
+      ul {
+        @media screen and (max-width: 991.98px) {
+          width: 100%;
+        }
+        li {
+          &.nav-item {
+            @media screen and (max-width: 991.98px) {
+              display: block;
+              width: 100%;
+              text-align: center;
+              padding: 5px 10px;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+    .app-footer-right {
+      @media screen and (max-width: 991.98px) {
+        display: flex;
+        margin: 15px auto 5px;
+        text-align: center;
+        padding: 5px 10px;
+      }
+    }
+  }
+  a {
+    padding: 0 5px;
+    color: $red;
+    text-decoration: none;
+    &:hover {
+      color: $dark_red;
+      text-decoration: none;
+    }
+  }
+}
+.dashboard-row {
+  a {
+    .card {
+      &.widget-content {
+        height: 100%;
+        @media screen and (max-width: 991.98px) {
+          height: auto;
+        }
+      }
+      .widget-content-left {
+        padding: 0 10px 0 0;
+        .widget-heading {
+          color: $red;
+          opacity: 1;
+          font-size: 18px;
+        }
+        .widget-subheading {
+          color: $black;
+          opacity: 1;
+          font-size: 15px;
+        }
+      }
+    }
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      .card {
+        background: $beige;
+        .widget-content-left {
+          padding: 0 10px 0 0;
+          .widget-heading {
+            color: $dark_red;
+          }
+        }
+        .widget-content-right {
+          i {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+#delete_prefilled {
+  text-align: center;
+  margin: 0 auto 20px;
+}
+
+.area-input-group {
+  margin: 0 0 0 !important;
+}
