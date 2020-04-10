@@ -16,8 +16,8 @@
     <table class="display" id="open-request-table" style="display: none; width: 100%;">
         <thead>
         <tr>
-            <th>Név/Cím</th>
-            <th>Típus</th>
+            <th>{{ __('Név/Cím') }}</th>
+            <th>{{ __('Típus') }}</th>
             <th></th>
             <th></th>
         </tr>
@@ -33,8 +33,8 @@
                     <td>{{$request->uds_help_request_name}}</td>
                     <td>
                         <span class="waves-effect green white-text accent-3 btn tooltipped"
-                              data-position="bottom" data-tooltip="{{$request->uds_description}}">Leírás</span>
-                        @if($current_user->role_id != 7 && $current_user->volunteer_data->status == 1 && ($current_user->role_id == 1 || $current_user->in_progress_helping_count <= 4))<span class="waves-effect indigo white-text accent-3 btn" data-status="3" data-id="{{$request->uds_id}}" id="volunteer_for_support">Vállalom</span>@endif
+                              data-position="bottom" data-tooltip="{{$request->uds_description}}">{{ __('Leírás') }}</span>
+                        @if($current_user->role_id != 7 && $current_user->volunteer_data->status == 1 && ($current_user->role_id == 1 || $current_user->in_progress_helping_count <= 4))<span class="waves-effect indigo white-text accent-3 btn" data-status="3" data-id="{{$request->uds_id}}" id="volunteer_for_support">{{ __('Vállalom') }}</span>@endif
                     </td>
                     <td>
                         {{$request->priority}}
@@ -45,28 +45,28 @@
     </table>
     <div id="support_user_data_modal" class="modal">
         <div class="modal-content">
-            <h4>Kapcsolattartási információk</h4>
+            <h4>{{ __('Kapcsolattartási információk') }}</h4>
             <table>
                 <tr>
-                    <td>Név</td>
+                    <td>{{ __('Név') }}</td>
                     <td id="modal-support-name"></td>
                 </tr>
                 <tr>
-                    <td>Email</td>
+                    <td>{{ __('Email') }}</td>
                     <td id="modal-support-email"></td>
                 </tr>
                 <tr>
-                    <td>Telefon</td>
+                    <td>{{ __('Telefon') }}</td>
                     <td id="modal-support-phone"></td>
                 </tr>
                 <tr>
-                    <td>Facebook</td>
+                    <td>{{ __('Facebook') }}</td>
                     <td id="modal-support-facebook"></td>
                 </tr>
             </table>
         </div>
         <div class="modal-footer">
-            <span class="modal-close waves-effect waves-green btn-flat">Kilépés</span>
+            <span class="modal-close waves-effect waves-green btn-flat">{{ __('Kilépés') }}</span>
         </div>
     </div>
 @endsection

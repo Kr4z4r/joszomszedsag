@@ -8,7 +8,7 @@
             <div class="col s12">
                 <form method="post" action="{{url('form-submit')}}"  id="helprequest_reg_form" class="card-panel hoverable" autocomplete="{{ Str::random(16) }}">
                     <div class="row">
-                        <h4>Segítség kérése</h4>
+                        <h4>{{ __('Segítség kérése') }}</h4>
                     </div>
                     <div class="row form-errors">
                         <ul>
@@ -24,16 +24,16 @@
                     <div class="row">
                         <div class="input-field col s12 m3">
                             <input required name="first_name" id="first_name" type="text" class="validate" value="{{ old('first_name') }}">
-                            <label for="first_name">Családnév</label>
+                            <label for="first_name">{{ __('Családnév') }}</label>
                         </div>
                         <div class="input-field col s12 m3">
                             <input required name="last_name" id="last_name" type="text" class="validate" value="{{ old('last_name') }}">
-                            <label for="last_name">Keresztnév</label>
+                            <label for="last_name">{{ __('Keresztnév') }}</label>
                         </div>
                         <div class="input-field col s12 m3">
                             <input required name="display_name" id="display_name" type="text" class="validate" value="{{ old('display_name') }}">
-                            <label for="display_name">Becenév/Megszólítás</label>
-                            <span class="helper-text">Ezt minden más felhasználó látja, ez alapján "azonosítják" Önt!</span>
+                            <label for="display_name">{{ __('Becenév/Megszólítás') }}</label>
+                            <span class="helper-text">{{ __('Ezt minden más felhasználó látja, ez alapján "azonosítják" Önt!') }}</span>
                         </div>
                         <div class="input-field col s12 m3">
                             <select id="birth_year" name="birth_year" class="validate">
@@ -42,7 +42,7 @@
                                     <option @if(old('birth_year') == $i) selected @endif value="{{$i}}">{{$i}}</option>
                                 @endfor
                             </select>
-                            <label for="birth_year">Születési Év</label>
+                            <label for="birth_year">{{ __('Születési Év') }}</label>
                         </div>
                     </div>
                     <div class="row">
@@ -179,7 +179,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12 center-align">
-                            <button class="waves-effect waves-light btn-large" type="submit" name="action">Regisztráció
+                            <button class="waves-effect waves-light btn-large" type="submit" name="action">{{ __('Regisztráció') }}
                                 <i class="material-icons right">send</i>
                             </button>
                         </div>

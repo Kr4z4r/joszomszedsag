@@ -24,7 +24,7 @@
                 <td>
                     <b>{{ $request->display_name }}</b>
                     <div class="divider"></div>
-                    {{$request->city}}, {{$request->street}} @if(isset($request->house_number)) {{$request->house_number}}-től @else Az Utca elejétől @endif  @if(isset($request->house_number_2)) {{$request->house_number_2}}-ig @else Az Utca Végéig @endif
+                    {{$request->city}}, {{$request->street}} @if(isset($request->house_number)) {{$request->house_number}}-től @else {{ __('Az Utca elejétől') }} @endif  @if(isset($request->house_number_2)) {{$request->house_number_2}}-ig @else {{ __('Az Utca Végéig') }} @endif
                     @if($request->has_car) <i class="material-icons">drive_eta</i> @endif
                 </td>
                 <td>
@@ -35,14 +35,14 @@
                     </ul>
                 </td>
                 <td><span class="waves-effect yellow black-text accent-3 btn modal-trigger" data-target="request_help_email_modal"
-                          data-id="{{$request->volunteer_id}}" id="support_notify_volunteer">Értesítés</span></td>
+                          data-id="{{$request->volunteer_id}}" id="support_notify_volunteer">{{ __('Értesítés') }}</span></td>
             </tr>
         @endforeach
         </tbody>
     </table>
     <div id="request_help_email_modal" class="modal">
         <div class="modal-content">
-            <h4 id="modal_title">Üzenet küldése Vigyázónak</h4>
+            <h4 id="modal_title">{{ __('Üzenet küldése Vigyázónak') }}</h4>
 
             <h5>{{ __('Kérem adja meg az üzenetét') }}</h5>
             <textarea id="email_text" name="email_text" class="materialize-textarea" data-length="255"></textarea>
@@ -50,8 +50,8 @@
 
         </div>
         <div class="modal-footer">
-            <span class="waves-effect waves-green btn" id="modal_send_volunteer_notification">Küldés</span>
-            <span class="modal-close waves-effect waves-green btn-flat">Mégse</span>
+            <span class="waves-effect waves-green btn" id="modal_send_volunteer_notification">{{ __('Küldés') }}</span>
+            <span class="modal-close waves-effect waves-green btn-flat">{{ __('Mégse') }}</span>
         </div>
     </div>
 @endsection

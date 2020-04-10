@@ -18,9 +18,9 @@
     <table class="display" id="my-request-table" style="display: none; width: 100%;">
         <thead>
         <tr>
-            <th>Állapot frissítve</th>
-            <th>Vigyázó / Státusz</th>
-            <th>Típus</th>
+            <th>{{ __('Állapot frissítve') }}</th>
+            <th>{{ __('Vigyázó / Státusz') }}</th>
+            <th>{{ __('Típus') }}</th>
             <th></th>
         </tr>
         </thead>
@@ -45,7 +45,7 @@
                           @else
                           data-id="{{$request->uds_volunteer_user_id}}" id="get_volunteer_details"
                           @endif>Részletek</span>
-                    <span class="waves-effect yellow black-text accent-3 btn" data-status="1" data-id="{{$request->uds_id}}" id="complete_support">Teljesítve</span>
+                    <span class="waves-effect yellow black-text accent-3 btn" data-status="1" data-id="{{$request->uds_id}}" id="complete_support">{{ __('Teljesítve') }}</span>
                 </td>
             </tr>
         @endforeach
@@ -56,9 +56,9 @@
     <table class="display" id="my-finished-request-table" style="display: none; width: 100%;">
         <thead>
         <tr>
-            <th>Teljesítve</th>
-            <th>Vigyázó</th>
-            <th>Típus</th>
+            <th>{{ __('Teljesítve') }}</th>
+            <th>{{ __('Vigyázó') }}</th>
+            <th>{{ __('Típus') }}</th>
             <th></th>
         </tr>
         </thead>
@@ -69,7 +69,7 @@
                 <td>{{isset($request->volunteer_first_name)?$request->volunteer_first_name:''}} {{isset($request->volunteer_last_name)?$request->volunteer_last_name:''}}</td>
                 <td>{{$request->uds_help_request_name}}</td>
                 <td>
-                    <span class="waves-effect green white-text accent-3 btn" data-id="{{$request->uds_id}}" id="get_support_details">Részletek</span>
+                    <span class="waves-effect green white-text accent-3 btn" data-id="{{$request->uds_id}}" id="get_support_details">{{ __('Részletek') }}</span>
                 </td>
             </tr>
         @endforeach
@@ -77,32 +77,32 @@
     </table>
     <div id="support_user_data_modal" class="modal">
         <div class="modal-content">
-            <h4 id="modal-support-title">Kapcsolattartási információk</h4>
+            <h4 id="modal-support-title">{{ __('Kapcsolattartási információk') }}</h4>
             <table>
                 <tr>
-                    <th>Név</th>
+                    <th>{{ __('Név') }}</th>
                     <td id="modal-support-name"></td>
                 </tr>
                 <tr>
-                    <th>Email</th>
+                    <th>{{ __('Email') }}</th>
                     <td id="modal-support-email"></td>
                 </tr>
                 <tr>
-                    <th>Telefon</th>
+                    <th>{{ __('Telefon') }}</th>
                     <td id="modal-support-phone"></td>
                 </tr>
                 <tr>
-                    <th>Facebook</th>
+                    <th>{{ __('Facebook') }}</th>
                     <td id="modal-support-facebook"></td>
                 </tr>
                 <tr>
-                    <th>Leírás</th>
+                    <th>{{ __('Leírás') }}</th>
                     <td id="modal-support-description"></td>
                 </tr>
             </table>
         </div>
         <div class="modal-footer">
-            <span class="modal-close waves-effect waves-green btn-flat">Kilépés</span>
+            <span class="modal-close waves-effect waves-green btn-flat">{{ __('Kilépés') }}</span>
         </div>
     </div>
 @endsection
