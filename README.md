@@ -1,78 +1,91 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Help your neighbors
+===
 
-## About Laravel
+# Why
+* We are facing a global crisis and we want to help people in need by enabling volunteers, helpers to connect with them fast and safely to solve issues in local communities.
+* As a consequence to the covid crisis, state support systems are overburdened.
+* The most endangered age group (65+) have the least digital competency and people living in poor conditions also often lack access to the internet where they could ask for help.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# What
+We are creating an open-source multilingual online portal aimed at enhancing neighborhood cooperation that is scalable, promote the self-organization of local communities, ease the pressure on central/municipal social and other support systems.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## You can either:
+* OFFLINE - If you see a need and can handle it yourself, you’re great! You don’t need to register the need.
+* ONLINE - If you see a need on the portal, you can assign it to yourself
+* ONLINE - If you see and can’t handle a need, you can register it and the platform asks others to help
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# To who
+Everyone in need but especially:
+* Elders
+* Handicapped people
+* Families, single parents
 
-## Learning Laravel
+# We need help in these areas
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* UX/UI/Graphic designers
+* Web developers
+* Testers (UI automated tests would be awesome)
+* Volunteers for field testing
+* Volunteers for translation
+* Share this project with people who could help our cause
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+# Technology
+* Laravel
+* jQuery
+* SCSS
+* MySQL
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# Licence
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+Open-source, [AGPL v3](https://www.gnu.org/licenses/agpl-3.0.en.html)
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Project website
 
-## Code of Conduct
+https://joszomszedsag.com/
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Contact
 
-## Security Vulnerabilities
+* [Gergő Rostás](https://www.linkedin.com/in/rostas-gergo/) - Lead developer
+* [Gáspár Incze](https://www.linkedin.com/in/inczegaspar/) - Scrum Master, International team recruiter & coordinator
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+# Why we are better than XYZ closed-source portal promoting neighbourhood cooperation?
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. We design in the special needs of a quarantine situation and also keeping volunteers motivated
+2. Nextdoor in available in about 15 languages, we will crowd-source translation to as many language as needed
+3. Our project is open-source and you can host is as well, so there is no single point of failure.
+4. Strongest privacy guarantees: no need to give away data of your local community members to a foreign company
+
+
+
+# Risk reduction
+
+
+| Risk | Potential consequences | Mitigation |
+| -------- | -------- | -------- |
+| Volunteer goes missing/get sick     | Task will not be completed     | After 48 hours email reminder, Put back to open requests pool after 72 hours |
+| Volunteer with malicious intent | Criminal activity, Portal reputation loss | FB+phone or email+phone verification Public profile: Name, Photo, Address |
+| Help requestor abandons the portal/request | Unknown state of request, frustration for volunteers, damage helpful intent towards others in need | After 24 hours the request is marked as completed. |
+| Volunteer overload | - | Volunteer manages his/her own workload by taking as many tasks as s/he can handle, Can make profile inactive |
+| No volunteer found in area | Demotivating for users | TO BE DEVELOPED |
+| Registration to remote area | Fake, phishing or irrelevant requests | Admin selects the available (served) postcodes upon system install | 
+
+
+**More details here:**
+https://hackmd.io/Tm7phLAWQCyaRnKq62eILw
+
+
+## Appendix and FAQ
+
+:::info
+**Can you improve this document?** Contact us or create a pull request to contribute your superpowers!
+:::
+
+###### tags: `Templates` `Documentation`
+
+
+
+
