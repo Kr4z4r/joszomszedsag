@@ -2,7 +2,7 @@
 Help your neighbors
 ===
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/Kr4z4r/joszomszedsag.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Kr4z4r/joszomszedsag/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/Kr4z4r/joszomszedsag.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Kr4z4r/joszomszedsag/context:javascript)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/Kr4z4r/joszomszedsag.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Kr4z4r/joszomszedsag/alerts/)
 
 # Why
