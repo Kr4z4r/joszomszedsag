@@ -2,6 +2,9 @@
 Help your neighbors
 ===
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Kr4z4r/joszomszedsag.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Kr4z4r/joszomszedsag/alerts/)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/Kr4z4r/joszomszedsag.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Kr4z4r/joszomszedsag/alerts/)
+
 # Why
 * We are facing a global crisis and we want to help people in need by enabling volunteers, helpers to connect with them fast and safely to solve issues in local communities.
 * As a consequence to the covid crisis, state support systems are overburdened.
@@ -80,9 +83,9 @@ https://hackmd.io/Tm7phLAWQCyaRnKq62eILw
 
 ## Appendix and FAQ
 
-:::info
+
 **Can you improve this document?** Contact us or create a pull request to contribute your superpowers!
-:::
+
 
 ###### tags: `Templates` `Documentation`
 
