@@ -3,8 +3,8 @@
 @section('page_title')
     <div class="page-title-icon"><i class="pe-7s-note icon-gradient bg-white"></i></div>
     <div>
-        {{ __('Új segítség kérés létrehozása') }}
-        <div class="page-title-subheading">{{ __('Hozzon létre új segítségkérést, hogy a Vigyázók a lehető leghamarabb segítséget tudjanak nyújtani') }}</div>
+        {{ __('dashboard.create_new_request') }}
+        <div class="page-title-subheading">{{ __('dashboard.create_new_request_desc') }}</div>
     </div>
 @endsection
 @section('content')
@@ -22,23 +22,23 @@
         <input type="hidden" name="user_role" value="7">
         <div class="row">
             <span class="waves-effect waves-light btn-large beige" id="delete_prefilled">
-                {{ __('Más címét adom meg') }}
+                {{ __('dashboard.give_other_address') }}
                 <i class="material-icons right">edit</i>
             </span>
         </div>
         <div class="row">
             <div class="input-field col s12 m3">
                 <input required disabled name="first_name" id="first_name" type="text" class="validate" value="{{ $current_user->first_name }}">
-                <label for="first_name">{{ __('Családnév') }}</label>
+                <label for="first_name">{{ __('forms.family_name') }}</label>
             </div>
             <div class="input-field col s12 m3">
                 <input required disabled name="last_name" id="last_name" type="text" class="validate" value="{{ $current_user->last_name }}">
-                <label for="last_name">{{ __('Keresztnév') }}</label>
+                <label for="last_name">{{ __('forms.surname') }}</label>
             </div>
             <div class="input-field col s12 m3">
                 <input required disabled name="display_name" id="display_name" type="text" class="validate" value="{{ $current_user->display_name }}">
-                <label for="display_name">{{ __('Becenév/Megszólítás') }}</label>
-                <span class="helper-text">{{ __('Ezt minden más felhasználó látja, ez alapján "azonosítják" Önt!') }}</span>
+                <label for="display_name">{{ __('forms.nickname') }}</label>
+                <span class="helper-text">{{ __('forms.nickname_helper_text') }}</span>
             </div>
             <div class="input-field col s12 m3">
                 <select disabled class="validate" id="birth_year" name="birth_year">
@@ -47,22 +47,22 @@
                         <option @if($current_user->date_birth == $i) selected @endif value="{{$i}}">{{$i}}</option>
                     @endfor
                 </select>
-                <label for="birth_year">{{ __('Születési Év') }}</label>
+                <label for="birth_year">{{ __('forms.birth_year') }}</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 @if (setting('site.facebook_profile') == 1) l4 @else l6 @endif">
                 <input required disabled name="email" id="email" type="email" class="validate" value="{{ $current_user->email }}">
-                <label for="email">{{ __('Email') }}</label>
+                <label for="email">{{ __('forms.email') }}</label>
             </div>
             <div class="input-field col s12 @if (setting('site.facebook_profile') == 1) l4 @else l6 @endif">
                 <input required disabled name="phone" id="phone" type="text" class="validate" value="{{ $current_user->phone_number }}">
-                <label for="phone">{{ __('Telefon') }}</label>
+                <label for="phone">{{ __('forms.phone') }}</label>
             </div>
             @if (setting('site.facebook_profile') == 1)
                 <div class="input-field col s12 l4">
                     <input disabled name="facebook_profile" id="facebook_profile" type="text" value="{{ $current_user->facebook_profile }}">
-                    <label for="facebook_profile">{{ __('Facebook profil') }}</label>
+                    <label for="facebook_profile">{{ __('forms.facebook_profile') }}</label>
                 </div>
             @endif
         </div>
@@ -70,39 +70,39 @@
             <div class="input-field col s5 m2">
                 <input @if(isset($current_user->home_address)) disabled @endif type="text" required id="postcode" name="postcode" class="autocomplete"
                        autocomplete="{{ Str::random(16) }}" value="{{ isset($current_user->home_address)?$current_user->home_address->post_code:null }}">
-                <label for="postcode">{{ __('Irányítószám') }}</label>
+                <label for="postcode">{{ __('forms.post_code') }}</label>
             </div>
             <div class="input-field col s7 m3">
                 <input @if(isset($current_user->home_address)) disabled @endif type="text" required id="city" name="city" autocomplete="{{ Str::random(16) }}"
                        value="{{ isset($current_user->home_address)?$current_user->home_address->city:null }}">
-                <label for="city">{{ __('Város') }}</label>
+                <label for="city">{{ __('forms.city') }}</label>
             </div>
             <div class="input-field col s9 m5">
                 <input @if(isset($current_user->home_address)) disabled @endif type="text" required id="street" name="street" class="autocomplete"
                        autocomplete="{{ Str::random(16) }}" value="{{ isset($current_user->home_address)?$current_user->home_address->street:null }}">
-                <label for="street">{{ __('Utca') }}</label>
+                <label for="street">{{ __('forms.street') }}</label>
             </div>
             <div class="input-field col s3 m2">
                 <input @if(isset($current_user->home_address)) disabled @endif type="text" required id="house_number" name="house_number" class="validate"
                        value="{{ isset($current_user->home_address)?$current_user->home_address->house_number:null }}">
-                <label for="house_number">{{ __('Házszám') }}</label>
+                <label for="house_number">{{ __('forms.house_number') }}</label>
             </div>
         </div>
         <div class="row">
             <div class="col s12 l4">
                 <div class="col s12 m6 l5">
                     <div class="input-field">
-                        {{ __('Koronavírussal fertőzött vagyok:') }}
+                        {{ __('forms.has_corona') }}
                      </div>
                  </div>
                  <div class="col s12 m6 l7">
                      <div class="input-field">
                          <div class="switch">
                              <label>
-                                 {{ __('Nem') }}
+                                 {{ __('forms.no') }}
                                  <input type="checkbox" name="has_corona">
                                  <span class="lever"></span>
-                                 {{ __('Igen') }}
+                                 {{ __('forms.yes') }}
                              </label>
                          </div>
                      </div>
@@ -111,17 +111,17 @@
              <div class="col s12 l4">
                  <div class="col s12 m6 l5">
                      <div class="input-field">
-                         {{ __('Karanténban vagyok:') }}
+                         {{ __('forms.in_quarantine') }}
                      </div>
                  </div>
                  <div class="col s12 m6 l7">
                      <div class="input-field">
                          <div class="switch">
                              <label>
-                                 {{ __('Nem') }}
+                                 {{ __('forms.no') }}
                                  <input type="checkbox" name="in_quarantine">
                                  <span class="lever"></span>
-                                 {{ __('Igen') }}
+                                 {{ __('forms.yes') }}
                              </label>
                          </div>
                      </div>
@@ -130,17 +130,17 @@
              <div class="col s12 l4">
                  <div class="col s12 m6 l5">
                      <div class="input-field">
-                         {{ __('Egyéb krónikus megbetegedésem van:') }}
+                         {{ __('forms.has_chronic') }}
                      </div>
                  </div>
                  <div class="col s12 m6 l7">
                      <div class="input-field">
                          <div class="switch">
                              <label>
-                                 {{ __('Nem') }}
+                                 {{ __('forms.no') }}
                                  <input type="checkbox" name="has_chronic">
                                  <span class="lever"></span>
-                                 {{ __('Igen') }}
+                                 {{ __('forms.yes') }}
                              </label>
                          </div>
                      </div>
@@ -149,17 +149,17 @@
              <div class="col s12 l4">
                  <div class="col s12 m6 l3">
                      <div class="input-field">
-                         {{ __('Egyik sem (Egészséges vagyok):') }}
+                         {{ __('forms.is_healthy') }}
                      </div>
                  </div>
                  <div class="col s12 m6 l7">
                      <div class="input-field">
                          <div class="switch">
                              <label>
-                                 {{ __('Nem') }}
+                                 {{ __('forms.no') }}
                                  <input type="checkbox" name="is_healthy">
                                  <span class="lever"></span>
-                                 {{ __('Igen') }}
+                                 {{ __('forms.yes') }}
                              </label>
                          </div>
                      </div>
@@ -169,16 +169,16 @@
          <div class="row">
              <div class="input-field col s12 m6">
                  <select id="help_types" name="help_types">
-                     <option value="" disabled selected>{{ __('Kérem válasszon') }}</option>
+                     <option value="" disabled selected>{{ __('forms.please_choose') }}</option>
                      @foreach($help_types as $help)
                          <option value="{{$help->id}}">{{$help->name}}</option>
                     @endforeach
                 </select>
-                <label for="help_types">{{ __('Segítségkérés oka') }}</label>
+                <label for="help_types">{{ __('forms.help_reason') }}</label>
             </div>
             <div class="input-field col s12 m6">
                 <textarea id="situation_desc" name="situation_desc" class="materialize-textarea" data-length="255"></textarea>
-                <label for="situation_desc">{{ __('Szituáció rövid leírása') }}</label>
+                <label for="situation_desc">{{ __('forms.situation_short_description') }}</label>
             </div>
         </div>
         <div class="row">
@@ -187,17 +187,17 @@
             <div class="col">
                 <label>
                     <input required type="checkbox" name="privacy_policy" id="privacy_policy">
-                    <span>{{ __('Elolvastam és elfogadom az Adatvédelmi Szabályzatot.') }}</span>
+                    <span>{{ __('forms.privacy_policy') }}</span>
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12 center-align">
                 <button class="waves-effect waves-light btn-large red" type="submit" name="action"
-                @if($current_user->open_help_requests_count >= 3 && $current_user->role_id != 1) disabled @endif>{{ __('Rögzítés') }}
+                @if($current_user->open_help_requests_count >= 3 && $current_user->role_id != 1) disabled @endif>{{ __('forms.save_record') }}
                     <i class="material-icons right">send</i>
                 </button>
-                @if($current_user->open_help_requests_count >= 3 && $current_user->role_id != 1) <span class="helper-text">{{ __('Egyszerre max. 3 teljesítetlen segítségkérése lehet!') }}</span> @endif
+                @if($current_user->open_help_requests_count >= 3 && $current_user->role_id != 1) <span class="helper-text">{{ __('forms.max_3_open_requests') }}</span> @endif
             </div>
         </div>
     </form>

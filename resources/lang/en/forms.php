@@ -27,6 +27,22 @@ return [
   'i_am_healthy' => 'Kijelentem hogy a jelentkezés pillanatában egészséges vagyok és a mindenkori járványügyi szabályokat szigorúan betartom. Amennyiben bármilyen fertőzés esélye áll fent, nem veszek részt további önkéntességben.',
 
   ////
+  // dashboard/profile.blade.php
+  ////
+  'profile_subtitle' => 'Saját profil és vállalt segítségkérések',
+  'suspend_volunteer_status' => 'Önkéntesség felfüggesztése',
+  'suspend_volunteer_status_helper_text' => 'Tartós távollét, betegség(pozitív vírus teszt, karantén, stb), egyéb akadályoztatás esetén.',
+  'apply_for_volunteer' => 'Jelentkezés Vigyázónak',
+  'my_user_data' => 'Felhasználói adataim',
+  'my_volunteer_data' => 'Vigyázói adataim',
+
+  ////
+  // dashboard/help_request/new_request.blade.php
+  ////
+  'save_record' => 'Rögzítés',
+  'max_3_open_requests' => 'Egyszerre max. 3 teljesítetlen segítségkérése lehet!',
+
+  ////
   // Universal form texts
   ////
   'family_name' => 'Családnév',
@@ -49,5 +65,6 @@ return [
   'situation_short_description' => 'Szituáció rövid leírása',
   'privacy_policy' => 'Elolvastam és elfogadom az Adatvédelmi Szabályzatot.',
   'register_button' => 'Regisztráció',
+  'save' => 'Mentés',
 
 ];

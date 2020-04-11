@@ -3,8 +3,8 @@
 @section('page_title')
     <div class="page-title-icon"><i class="pe-7s-user icon-gradient bg-white"></i></div>
     <div>
-        {{ __('Profil') }}
-        <div class="page-title-subheading">{{ __('Saját profil és vállalt segítségkérések') }}</div>
+        {{ __('dashboard.profile') }}
+        <div class="page-title-subheading">{{ __('forms.profile_subtitle') }}</div>
     </div>
 @endsection
 @section('content')
@@ -31,21 +31,21 @@
         @if(isset($current_user->volunteer_data))
         <div class="row">
             <div class="input-field col s12 m3 l5 font-weight-bolder">
-                {{ __('Önkéntesség felfüggesztése') }}
-                <span class="helper-text">{{ __('Tartós távollét, betegség(pozitív vírus teszt, karantén, stb), egyéb akadályoztatás esetén.') }}</span>
+                {{ __('forms.suspend_volunteer_status') }}
+                <span class="helper-text">{{ __('forms.suspend_volunteer_status_helper_text') }}</span>
             </div>
             <div class="input-field col s12 m3 l3">
                 <div class="switch">
                     <label>
-                        {{ __('Nem') }}
+                        {{ __('forms.no') }}
                         <input type="checkbox" name="volunteer_status_cancelled" @if($current_user->volunteer_data->status == 0) checked @endif>
                         <span class="lever"></span>
-                        {{ __('Igen') }}
+                        {{ __('forms.yes') }}
                     </label>
                 </div>
             </div>
             <div class="input-field col s12 m4 center-align">
-                <button class="waves-effect waves-light btn-large red" type="submit" name="action">{{ __('Mentés') }}
+                <button class="waves-effect waves-light btn-large red" type="submit" name="action">{{ __('forms.save') }}
                     <i class="material-icons right">send</i>
                 </button>
             </div>
@@ -53,28 +53,28 @@
         @else
             <div class="row">
                 <div class="input-field col s12 m4 center-align">
-                    <a class="waves-effect red btn-large" href="?new_volunteer=1">{{ __('Jelentkezem Vigyázónak') }}
+                    <a class="waves-effect red btn-large" href="?new_volunteer=1">{{ __('forms.apply_for_volunteer') }}
                         <i class="material-icons right">pan_tool</i>
                     </a>
                 </div>
             </div>
         @endif
         <div class="row">
-            <h4>Felhasználói adataim</h4>
+            <h4>{{ __('forms.my_user_data') }}</h4>
         </div>
         <div class="row">
             <div class="input-field col s12 m3">
                 <input required disabled name="first_name" id="first_name" type="text" class="validate" value="{{ $current_user->first_name }}">
-                <label for="first_name">{{ __('Családnév') }}</label>
+                <label for="first_name">{{ __('forms.family_name') }}</label>
             </div>
             <div class="input-field col s12 m3">
                 <input required disabled name="last_name" id="last_name" type="text" class="validate" value="{{ $current_user->last_name }}">
-                <label for="last_name">{{ __('Keresztnév') }}</label>
+                <label for="last_name">{{ __('forms.surname') }}</label>
             </div>
             <div class="input-field col s12 m3">
                 <input required name="display_name" id="display_name" type="text" class="validate" value="{{ $current_user->display_name }}">
-                <label for="display_name">{{ __('Becenév/Megszólítás') }}</label>
-                <span class="helper-text">{{ __('Ezt minden más felhasználó látja, ez alapján "azonosítják" Önt!') }}</span>
+                <label for="display_name">{{ __('forms.nickname') }}</label>
+                <span class="helper-text">{{ __('forms.nickname_helper_text') }}</span>
             </div>
             <div class="input-field col s12 m3">
                 <select id="birth_year" disabled name="birth_year" class="validate">
@@ -83,28 +83,28 @@
                         <option @if($current_user->date_birth == $i) selected @endif value="{{$i}}">{{$i}}</option>
                     @endfor
                 </select>
-                <label for="birth_year">{{ __('Születési Év') }}</label>
-                <span class="helper-text">{{ __('Életkor min. 17 év, max. 59 év') }}</span>
+                <label for="birth_year">{{ __('forms.birth_year') }}</label>
+                <span class="helper-text">{{ __('forms.birthday_age_limit_helper_text') }}</span>
             </div>
         </div>
         <div class="row">
             <div class="col s12 @if (setting('site.facebook_profile') == 1) l4 @else l6 @endif">
                 <div class="input-field">
                     <input required name="email" id="email" type="email" class="validate" value="{{ $current_user->email }}">
-                    <label for="email">{{ __('Email') }}</label>
+                    <label for="email">{{ __('forms.email') }}</label>
                 </div>
             </div>
             <div class="col s12 @if (setting('site.facebook_profile') == 1) l4 @else l6 @endif">
                 <div class="input-field">
                     <input required name="phone" id="phone" type="text" class="validate" value="{{ $current_user->phone_number }}">
-                    <label for="phone">{{ __('Mobil') }}</label>
+                    <label for="phone">{{ __('forms.mobile') }}</label>
                 </div>
             </div>
             @if (setting('site.facebook_profile') == 1)
                 <div class="col s12 l4">
                     <div class="input-field">
                         <input name="facebook_profile" id="facebook_profile" type="text" value="{{ $current_user->facebook_profile }}">
-                        <label for="facebook_profile">{{ __('Facebook profil') }}</label>
+                        <label for="facebook_profile">{{ __('forms.facebook_profile') }}</label>
                     </div>
                 </div>
             @endif
@@ -113,54 +113,54 @@
             <div class="input-field col s5 m2">
                 <input required type="text" id="postcode" name="postcode" class="autocomplete validate"
                        autocomplete="{{ Str::random(16) }}" value="{{ isset($current_user->home_address)?$current_user->home_address->post_code:null }}">
-                <label for="postcode">{{ __('Irányítószám') }}</label>
+                <label for="postcode">{{ __('forms.post_code') }}</label>
             </div>
             <div class="input-field col s7 m3">
                 <input required type="text" id="city" name="city" autocomplete="{{ Str::random(16) }}"
                        value="{{ isset($current_user->home_address)?$current_user->home_address->city:null }}">
-                <label for="city">{{ __('Város') }}</label>
+                <label for="city">{{ __('forms.city') }}</label>
             </div>
             <div class="input-field col s9 m5">
                 <input required type="text" id="street" name="street" class="autocomplete validate"
                        autocomplete="{{ Str::random(16) }}" value="{{ isset($current_user->home_address)?$current_user->home_address->street:null }}">
-                <label for="street">{{ __('Utca') }}</label>
+                <label for="street">{{ __('forms.street') }}</label>
             </div>
             <div class="input-field col s3 m2">
                 <input required type="text" id="house_number" name="house_number" class="validate validate"
                        value="{{ isset($current_user->home_address)?$current_user->home_address->house_number:null }}">
-                <label for="house_number">{{ __('Házszám') }}</label>
+                <label for="house_number">{{ __('forms.house_number') }}</label>
             </div>
         </div>
         @if(isset($current_user->volunteer_data) || Request()->new_volunteer == 1)
             <div class="row">
                 @if(Request()->new_volunteer == 1)
-                    <h4>{{ __('Jelentkezés Vigyázónak') }}</h4>
+                    <h4>{{ __('forms.apply_for_volunteer') }}</h4>
                 @else
-                    <h4>{{ __('Vigyázói adataim') }}</h4>
+                    <h4>{{ __('forms.my_volunteer_data') }}</h4>
                 @endif
             </div>
             <div class="row">
                 <div class="input-field col s12 m4 l3">
-                    {{ __('Autóval rendelkezem:') }}
+                    {{ __('forms.has_car') }}
                 </div>
                 <div class="input-field col s12 m8 l9">
                     <div class="switch">
                         <label>
-                            {{ __('Nem') }}
+                            {{ __('forms.no') }}
                             <input type="checkbox" name="has_car" @if(isset($current_user->volunteer_data) && $current_user->volunteer_data->has_car == 1) checked @endif >
                             <span class="lever"></span>
-                            {{ __('Igen') }}
+                            {{ __('forms.yes') }}
                         </label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m4 l3">
-                    {{ __('Rendelkezésre állás:') }}
+                    {{ __('forms.availability') }}
                 </div>
                 <div class="input-field col s12 m4">
                     <select required class="validate" id="availability" name="availability">
-                        <option value="" disabled @if(!isset($current_user->volunteer_data) || $current_user->volunteer_data->availability == null) selected @endif>{{ __('Kérem válasszon') }}</option>
+                        <option value="" disabled @if(!isset($current_user->volunteer_data) || $current_user->volunteer_data->availability == null) selected @endif>{{ __('forms.please_choose') }}</option>
                         <option @if(isset($current_user->volunteer_data) && $current_user->volunteer_data->availability == 'Délelőtt') selected @endif value="Délelőtt">{{ __('Délelőtt') }}</option>
                         <option @if(isset($current_user->volunteer_data) && $current_user->volunteer_data->availability == 'Délután') selected @endif value="Délután">{{ __('Délután') }}</option>
                         <option @if(isset($current_user->volunteer_data) && $current_user->volunteer_data->availability == 'Reggeltől-Estig') selected @endif value="Reggeltől-Estig">{{ __('Reggeltől-Estig') }}</option>
@@ -170,7 +170,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    {{ __('Vállalt körzet(Kérem saját lakóhelyéről gyalogosan elérhető körzetet válasszon, max. 5 utca):') }}
+                    {{ __('forms.volunteer_area') }}
                 </div>
             </div>
             <div class="row">
@@ -178,28 +178,28 @@
                     <div class="input-field col s5 m1">
                         <input type="text" id="area_postcode_1" name="area_postcode[]" class="autocomplete"
                                autocomplete="{{ Str::random(16) }}" value="{{ isset($current_user->volunteer_data)?$current_user->volunteer_addresses[0]->post_code:null }}">
-                        <label for="area_postcode_1">{{ __('Irányítószám') }}</label>
+                        <label for="area_postcode_1">{{ __('forms.post_code') }}</label>
                     </div>
                     <div class="input-field col s7 m2">
                         <input type="text" id="area_city_1" name="area_city[]" value="{{ isset($current_user->volunteer_data)?$current_user->volunteer_addresses[0]->city:null }}">
-                        <label for="area_city_1">{{ __('Város') }}</label>
+                        <label for="area_city_1">{{ __('forms.city') }}</label>
                     </div>
                     <div class="input-field col s12 m4">
                         <input type="text" id="area_street_1" name="area_street[]" class="autocomplete"
                                autocomplete="{{ Str::random(16) }}" value="{{ isset($current_user->volunteer_data)?$current_user->volunteer_addresses[0]->street:null }}">
-                        <label for="area_street_1">{{ __('Utca') }}</label>
+                        <label for="area_street_1">{{ __('forms.street') }}</label>
                     </div>
                     <div class="input-field col s6 m2">
                         <input type="text" id="area_from-house-number_1" name="area_from-house-number[]"
                                class="validate" value="{{ isset($current_user->volunteer_addresses[0]->house_number)?$current_user->volunteer_addresses[0]->house_number:null }}">
-                        <label for="area_from-house-number_1">{{ __('Házszám(-tól)') }}</label>
-                        <span class="helper-text">{{ __('Hagyja üresen, ha az egész utcát vállalja.') }}</span>
+                        <label for="area_from-house-number_1">{{ __('forms.from_house_number') }}</label>
+                        <span class="helper-text">{{ __('forms.leave_empty_for_whole_street') }}</span>
                     </div>
                     <div class="input-field col s6 m2">
                         <input type="text" id="area_to-house-number_1" name="area_to-house-number[]"
                                class="validate" value="{{ isset($current_user->volunteer_addresses[0]->house_number_2)?$current_user->volunteer_addresses[0]->house_number_2:null }}">
-                        <label for="area_to-house-number_1">{{ __('Házszám(-ig)') }}</label>
-                        <span class="helper-text">{{ __('Hagyja üresen, ha az egész utcát vállalja.') }}</span>
+                        <label for="area_to-house-number_1">{{ __('forms.to_house_number') }}</label>
+                        <span class="helper-text">{{ __('forms.leave_empty_for_whole_street') }}</span>
                     </div>
                     <div class="input-field col s2 m1">
                         <span class="waves-effect red btn-small font-size-xlg" id="delete_area_address_1" style="display: none">
@@ -213,29 +213,29 @@
                             <div class="input-field col s5 m1">
                                 <input type="text" id="area_postcode_{{($i+1)}}" name="area_postcode[]" class="autocomplete"
                                        autocomplete="{{ Str::random(16) }}" @if(isset($current_user->volunteer_addresses[$i]))value="{{ $current_user->volunteer_addresses[$i]->post_code }}"@endif>
-                                <label for="area_postcode_{{($i+1)}}">{{ __('Irányítószám') }}</label>
+                                <label for="area_postcode_{{($i+1)}}">{{ __('forms.post_code') }}</label>
                             </div>
                             <div class="input-field col s7 m2">
                                 <input type="text" id="area_city_{{$i+1}}" name="area_city[]" @if(!isset($current_user->volunteer_addresses[$i])) disabled @endif
                                 @if(isset($current_user->volunteer_addresses[$i]))value="{{ $current_user->volunteer_addresses[$i]->city }}"@endif>
-                                <label for="area_city_{{($i+1)}}">{{ __('Város') }}</label>
+                                <label for="area_city_{{($i+1)}}">{{ __('forms.city') }}</label>
                             </div>
                             <div class="input-field col s12 m4">
                                 <input type="text" @if(!isset($current_user->volunteer_addresses[$i])) disabled @endif id="area_street_{{$i+1}}" name="area_street[]" class="autocomplete"
                                        autocomplete="{{ Str::random(16) }}" @if(isset($current_user->volunteer_addresses[$i]))value="{{ $current_user->volunteer_addresses[$i]->street }}"@endif>
-                                <label for="area_street_{{($i+1)}}">{{ __('Utca') }}</label>
+                                <label for="area_street_{{($i+1)}}">{{ __('forms.street') }}</label>
                             </div>
                             <div class="input-field col s6 m2">
                                 <input type="text" @if(!isset($current_user->volunteer_addresses[$i])) disabled @endif id="area_from-house-number_{{$i+1}}" name="area_from-house-number[]"
                                        class="validate" @if(isset($current_user->volunteer_addresses[$i]))value="{{ $current_user->volunteer_addresses[$i]->house_number }}"@endif>
-                                <label for="area_from-house-number_{{($i+1)}}">{{ __('Házszám(-tól)') }}</label>
-                                <span class="helper-text">{{ __('Hagyja üresen, ha az egész utcát vállalja.') }}</span>
+                                <label for="area_from-house-number_{{($i+1)}}">{{ __('forms.from_house_number') }}</label>
+                                <span class="helper-text">{{ __('forms.leave_empty_for_whole_street') }}</span>
                             </div>
                             <div class="input-field col s6 m2">
                                 <input type="text" @if(!isset($current_user->volunteer_addresses[$i])) disabled @endif id="area_to-house-number_{{$i+1}}" name="area_to-house-number[]"
                                        class="validate" @if(isset($current_user->volunteer_addresses[$i]))value="{{ $current_user->volunteer_addresses[$i]->house_number_2 }}"@endif>
-                                <label for="area_to-house-number_{{($i+1)}}">{{ __('Házszám(-ig)') }}</label>
-                                <span class="helper-text">{{ __('Hagyja üresen, ha az egész utcát vállalja.') }}</span>
+                                <label for="area_to-house-number_{{($i+1)}}">{{ __('forms.to_house_number') }}</label>
+                                <span class="helper-text">{{ __('forms.leave_empty_for_whole_street') }}</span>
                             </div>
                             <div class="input-field col s3 m1">
                                 <span class="waves-effect red btn-small font-size-xlg" id="delete_area_address_{{$i+1}}">
@@ -249,12 +249,12 @@
             <div class="row">
                 <div class="input-field col s12">
                     <select multiple id="help_types" name="help_types[]" data-old_value="{{ old('help_types.0') }}">
-                        <option value="" disabled @if(!isset($current_user->volunteer_data) || $help_types[0] == null) selected @endif>Kérem válasszon</option>
+                        <option value="" disabled @if(!isset($current_user->volunteer_data) || $help_types[0] == null) selected @endif>{{ __('forms.please_choose') }}</option>
                         @foreach($help_types as $help)
                             <option @if(isset($current_user->volunteer_data) && in_array($help->id, json_decode($current_user->volunteer_data->helping_groups))) selected @endif value="{{$help->id}}">{{$help->name}}</option>
                         @endforeach
                     </select>
-                    <label for="help_types">{{ __('Vállalt segítségnyújtás') }}</label>
+                    <label for="help_types">{{ __('forms.help_types') }}</label>
                 </div>
             </div>
             @if(!isset($current_user->volunteer_data) && isset(Request()->new_volunteer))
@@ -262,9 +262,7 @@
                     <div class="col">
                         <label>
                             <input required type="checkbox" name="privacy_policy" id="privacy_policy">
-                            <span>{{ __('Elolvastam és elfogadom az Adatvédelmi Szabályzatot és elolvastam a Jószomszédság Vigyázó
-                            Hálózat szabályait. Kijelentem, hogy a vállalt feladataimat legjobb tudásom szerint elvégzem,
-                            ha akadály adódik, azonnal jelzem.') }}</span>
+                            <span>{{ __('forms.privacy_policy_and_jvh_rules') }}</span>
                         </label>
                     </div>
                 </div>
@@ -272,8 +270,7 @@
                     <div class="col">
                         <label>
                             <input required type="checkbox" name="health_checkbox" id="health_checkbox">
-                            <span>{{ __('Kijelentem hogy a jelentkezés pillanatában egészséges vagyok és a mindenkori járványügyi szabályokat szigorúan betartom.
-                            Amennyiben bármilyen fertőzés esélye áll fent, nem veszek részt további önkéntességben.') }}
+                            <span>{{ __('forms.i_am_healthy') }}
                         </span>
                         </label>
                     </div>
@@ -282,7 +279,7 @@
         @endif
         <div class="row">
             <div class="input-field col s12 center-align">
-                <button class="waves-effect waves-light btn-large red" type="submit" name="action">{{ __('Mentés') }}
+                <button class="waves-effect waves-light btn-large red" type="submit" name="action">{{ __('forms.save') }}
                     <i class="material-icons right">send</i>
                 </button>
             </div>

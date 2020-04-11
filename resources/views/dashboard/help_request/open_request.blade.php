@@ -3,8 +3,8 @@
 @section('page_title')
     <div class="page-title-icon"><i class="pe-7s-unlock icon-gradient bg-white"></i></div>
     <div>
-        {{ __('Teljesítetlen segítségkérések') }}
-        <div class="page-title-subheading">{{ __('Körzetben található megoldatlan segítségkérések listája') }}</div>
+        {{ __('dashboard.uncomplete_requests') }}
+        <div class="page-title-subheading">{{ __('dashboard.uncomplete_requests_desc') }}</div>
     </div>
 @endsection
 
@@ -16,8 +16,8 @@
     <table class="display" id="open-request-table" style="display: none; width: 100%;">
         <thead>
         <tr>
-            <th>{{ __('Név/Cím') }}</th>
-            <th>{{ __('Típus') }}</th>
+            <th>{{ __('dashboard.name_slash_address') }}</th>
+            <th>{{ __('dashboard.type') }}</th>
             <th></th>
             <th></th>
         </tr>
@@ -33,8 +33,8 @@
                     <td>{{$request->uds_help_request_name}}</td>
                     <td>
                         <span class="waves-effect green white-text accent-3 btn tooltipped"
-                              data-position="bottom" data-tooltip="{{$request->uds_description}}">{{ __('Leírás') }}</span>
-                        @if($current_user->role_id != 7 && $current_user->volunteer_data->status == 1 && ($current_user->role_id == 1 || $current_user->in_progress_helping_count <= 4))<span class="waves-effect indigo white-text accent-3 btn" data-status="3" data-id="{{$request->uds_id}}" id="volunteer_for_support">{{ __('Vállalom') }}</span>@endif
+                              data-position="bottom" data-tooltip="{{$request->uds_description}}">{{ __('dashboard.description') }}</span>
+                        @if($current_user->role_id != 7 && $current_user->volunteer_data->status == 1 && ($current_user->role_id == 1 || $current_user->in_progress_helping_count <= 4))<span class="waves-effect indigo white-text accent-3 btn" data-status="3" data-id="{{$request->uds_id}}" id="volunteer_for_support">{{ __('dashboard.offer_help') }}</span>@endif
                     </td>
                     <td>
                         {{$request->priority}}
@@ -45,28 +45,28 @@
     </table>
     <div id="support_user_data_modal" class="modal">
         <div class="modal-content">
-            <h4>{{ __('Kapcsolattartási információk') }}</h4>
+            <h4>{{ __('dashboard.contact_info') }}</h4>
             <table>
                 <tr>
-                    <td>{{ __('Név') }}</td>
+                    <td>{{ __('dashboard.name') }}</td>
                     <td id="modal-support-name"></td>
                 </tr>
                 <tr>
-                    <td>{{ __('Email') }}</td>
+                    <td>{{ __('dashboard.name') }}</td>
                     <td id="modal-support-email"></td>
                 </tr>
                 <tr>
-                    <td>{{ __('Telefon') }}</td>
+                    <td>{{ __('dashboard.phone') }}</td>
                     <td id="modal-support-phone"></td>
                 </tr>
                 <tr>
-                    <td>{{ __('Facebook') }}</td>
+                    <td>{{ __('dashboard.facebook') }}</td>
                     <td id="modal-support-facebook"></td>
                 </tr>
             </table>
         </div>
         <div class="modal-footer">
-            <span class="modal-close waves-effect waves-green btn-flat">{{ __('Kilépés') }}</span>
+            <span class="modal-close waves-effect waves-green btn-flat">{{ __('dashboard.cancel') }}</span>
         </div>
     </div>
 @endsection

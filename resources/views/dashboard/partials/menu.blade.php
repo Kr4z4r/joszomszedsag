@@ -1,8 +1,8 @@
 @foreach($items as $menu_item)
     @if($menu_item->link() == route('admin_new_help_request', [], false))
-        <li class="app-sidebar__heading">{{ __('Segítségkérések') }}</li>
+        <li class="app-sidebar__heading">{{ __('dashboard.help_requests') }}</li>
     @elseif($menu_item->link() == route('admin_volunteers_list', [], false))
-        <li class="app-sidebar__heading">{{ __('Képviselők') }}</li>
+        <li class="app-sidebar__heading">{{ __('dashboard.volunteers') }}</li>
     @endif
     <li>
         <a href="{{ $menu_item->link() }}" @if( \Illuminate\Support\Facades\Request::path() == trim($menu_item->link(),'/'))class="mm-active"@endif>

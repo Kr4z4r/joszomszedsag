@@ -15,8 +15,8 @@
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left">
-                                <div class="widget-heading">{{ __('Saját profil') }}</div>
-                                <div class="widget-subheading">{{ __('Frissítse adatait, hogy a lehető legpontosabban működjön a rendszer') }}</div>
+                                <div class="widget-heading">{{ __('dashboard.profile') }}</div>
+                                <div class="widget-subheading">{{ __('dashboard.profile_menu_subheading') }}</div>
                             </div>
                             <div class="widget-content-right">
                                 <div class="widget-numbers text-success"><i class="pe-7s-play icon-gradient bg-premium-dark"></i></div>
@@ -32,8 +32,8 @@
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left">
-                                <div class="widget-heading">{{ __('Új segítségkérés') }}</div>
-                                <div class="widget-subheading">{{ __('Hozzon létre új segítségkérést, hogy a Vigyázók a lehető leghamarabb segítséget tudjanak nyújtani') }}</div>
+                                <div class="widget-heading">{{ __('dashboard.new_help_request') }}</div>
+                                <div class="widget-subheading">{{ __('dashboard.new_help_request_subheading') }}</div>
                             </div>
                             <div class="widget-content-right">
                                 <div class="widget-numbers text-warning"><i class="pe-7s-play icon-gradient bg-premium-dark"></i></div>
@@ -54,11 +54,11 @@
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left">
                                 @if(\Illuminate\Support\Facades\Auth::user()->role_id == 6)
-                                    <div class="widget-heading">{{ __('Várakozó segítségkérések') }}</div>
+                                    <div class="widget-heading">{{ __('dashboard.waiting_requests') }}</div>
                                     <div class="widget-subheading">{{ __('') }}</div>
                                 @else
-                                    <div class="widget-heading">{{ __('Saját segítségkéréseim') }}</div>
-                                    <div class="widget-subheading">{{ __('Tekintse át segítségkéréseit és azok állapotát') }}</div>
+                                    <div class="widget-heading">{{ __('dashboard.own_requests') }}</div>
+                                    <div class="widget-subheading">{{ __('dashboard.own_requests_subheading') }}</div>
                                 @endif
                             </div>
                             <div class="widget-content-right">
@@ -75,8 +75,8 @@
                     <div class="widget-content-outer">
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left">
-                                <div class="widget-heading">{{ __('Vigyázók listája') }}</div>
-                                <div class="widget-subheading">{{ __('Nézze meg az aktív Vigyázók listáját, hogy kik elérhetőek a közelében') }}</div>
+                                <div class="widget-heading">{{ __('dashboard.guardian_list') }}</div>
+                                <div class="widget-subheading">{{ __('dashboard.guardian_list_subheading') }}</div>
                             </div>
                             <div class="widget-content-right">
                                 <div class="widget-numbers text-danger"><i class="pe-7s-play icon-gradient bg-premium-dark"></i></div>

@@ -3,8 +3,8 @@
 @section('page_title')
     <div class="page-title-icon"><i class="pe-7s-drawer icon-gradient bg-white"></i></div>
     <div>
-        {{ __('Saját segítségkéréseim') }}
-        <div class="page-title-subheading">{{ __('Saját segítségkéréseim listája') }}</div>
+        {{ __('dashboard.own_requests') }}
+        <div class="page-title-subheading">{{ __('dashboard.list_of_own_requests') }}</div>
     </div>
 @endsection
 
@@ -14,13 +14,13 @@
         var ajaxMoreInfoRoute = '{{ $ajaxMoreInfoRoute }}';
         var csrfToken = '{{csrf_token()}}';
     </script>
-    <h3>{{ __('Teljesítetlen segítségkéréseim') }}</h3>
+    <h3>{{ __('dashboard.pending_requests') }}</h3>
     <table class="display" id="my-request-table" style="display: none; width: 100%;">
         <thead>
         <tr>
-            <th>{{ __('Állapot frissítve') }}</th>
-            <th>{{ __('Vigyázó / Státusz') }}</th>
-            <th>{{ __('Típus') }}</th>
+            <th>{{ __('dashboard.status_changed') }}</th>
+            <th>{{ __('dashboard.guardian_slash_status') }}</th>
+            <th>{{ __('dashboard.type') }}</th>
             <th></th>
         </tr>
         </thead>
@@ -44,21 +44,21 @@
                           data-id="{{$request->uds_id}}" id="get_support_details"
                           @else
                           data-id="{{$request->uds_volunteer_user_id}}" id="get_volunteer_details"
-                          @endif>Részletek</span>
-                    <span class="waves-effect yellow black-text accent-3 btn" data-status="1" data-id="{{$request->uds_id}}" id="complete_support">{{ __('Teljesítve') }}</span>
+                          @endif>{{ __('dashboard.details') }}</span>
+                    <span class="waves-effect yellow black-text accent-3 btn" data-status="1" data-id="{{$request->uds_id}}" id="complete_support">{{ __('dashboard.done') }}</span>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
     <div class="divider"></div>
-    <h3>{{ __('Teljesített segítségkéréseim') }}</h3>
+    <h3>{{ __('dashboard.my_done_requests') }}</h3>
     <table class="display" id="my-finished-request-table" style="display: none; width: 100%;">
         <thead>
         <tr>
-            <th>{{ __('Teljesítve') }}</th>
-            <th>{{ __('Vigyázó') }}</th>
-            <th>{{ __('Típus') }}</th>
+            <th>{{ __('dashboard.done') }}</th>
+            <th>{{ __('dashboard.guardian') }}</th>
+            <th>{{ __('dashboard.type') }}</th>
             <th></th>
         </tr>
         </thead>
@@ -69,7 +69,7 @@
                 <td>{{isset($request->volunteer_first_name)?$request->volunteer_first_name:''}} {{isset($request->volunteer_last_name)?$request->volunteer_last_name:''}}</td>
                 <td>{{$request->uds_help_request_name}}</td>
                 <td>
-                    <span class="waves-effect green white-text accent-3 btn" data-id="{{$request->uds_id}}" id="get_support_details">{{ __('Részletek') }}</span>
+                    <span class="waves-effect green white-text accent-3 btn" data-id="{{$request->uds_id}}" id="get_support_details">{{ __('dashboard.details') }}</span>
                 </td>
             </tr>
         @endforeach
@@ -77,32 +77,32 @@
     </table>
     <div id="support_user_data_modal" class="modal">
         <div class="modal-content">
-            <h4 id="modal-support-title">{{ __('Kapcsolattartási információk') }}</h4>
+            <h4 id="modal-support-title">{{ __('dashboard.contact_info') }}</h4>
             <table>
                 <tr>
-                    <th>{{ __('Név') }}</th>
+                    <th>{{ __('dashboard.name') }}</th>
                     <td id="modal-support-name"></td>
                 </tr>
                 <tr>
-                    <th>{{ __('Email') }}</th>
+                    <th>{{ __('dashboard.email') }}</th>
                     <td id="modal-support-email"></td>
                 </tr>
                 <tr>
-                    <th>{{ __('Telefon') }}</th>
+                    <th>{{ __('dashboard.phone') }}</th>
                     <td id="modal-support-phone"></td>
                 </tr>
                 <tr>
-                    <th>{{ __('Facebook') }}</th>
+                    <th>{{ __('dashboard.facebook') }}</th>
                     <td id="modal-support-facebook"></td>
                 </tr>
                 <tr>
-                    <th>{{ __('Leírás') }}</th>
+                    <th>{{ __('dashboard.description') }}</th>
                     <td id="modal-support-description"></td>
                 </tr>
             </table>
         </div>
         <div class="modal-footer">
-            <span class="modal-close waves-effect waves-green btn-flat">{{ __('Kilépés') }}</span>
+            <span class="modal-close waves-effect waves-green btn-flat">{{ __('dashboard.cancel') }}</span>
         </div>
     </div>
 @endsection

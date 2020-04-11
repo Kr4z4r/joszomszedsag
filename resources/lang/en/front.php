@@ -28,7 +28,7 @@ return [
   "ask_for_help_description" => "If you need help, because you are elderly, sick or have any other problems, ask for help from the Guardians around you. They will get in contact with you.",
   "request_help_button" => "Request Help",
   //  ->Volunteer
-  "volunteer" => "Jelentkezzen Vigyázónak!",
+  "volunteer" => "Volunteer!",
   "volunteer_desc" => "Regisztráljon Ön is Vigyázónak, ha segítséget nyújtana rászoruló szomszédainak lakókörzetében!",
   "volunteer_button" => "Jelentkezés Vigyázónak",
 
