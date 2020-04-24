@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+
+  # Proxy: we use it to be able to connect to http port 80 to the application
+  # (!) Make sure you only have one proxy container running
+  # (!) Always docker-compose stop before starting another compose stack
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  # MySQL Database (persistent data)
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+        MYSQL_DATABASE: joszomszedsag
+        MYSQL_ROOT_PASSWORD: secret
+    expose:
+      - 3301
+
+  # Caching service
+  redis:
+    image: redis
+    expose:
+      - 6379
+
+  # Application: https://github.com/Kr4z4r/joszomszedsag/blob/master/docker/Readme.md
+  # If you'd like to build the image yourself, replace image: with build: docker/build
+  app:
+    image: adrian7/joszomszedsag-v1.0
+    depends_on:
+      - mysql
+      - redis
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: joszomszedsag.local
+    #env_file:
+    #  - .env
+    volumes:
+      - .:/var/www
