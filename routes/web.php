@@ -57,4 +57,4 @@ Route::name('phoneverify.send')
     ->post('/phoneverification', 'PhoneVerificationController@sendCode');
 
 Route::name('phoneverify.check')
-     ->post('/phoneverification', 'PhoneVerificationController@checkCode');
+     ->post('/phoneverification/check', 'PhoneVerificationController@checkCode');
