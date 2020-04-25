@@ -51,3 +51,10 @@ Route::get('/adatvedelmi_nyilatkozat', 'LegalController@privacy_text')->name('pr
 Route::get('/cookie_hasznalati_szabalyzat', 'LegalController@cookie_text')->name('cookie');
 Route::get('/hibabejelentes', 'ErrorController@index')->name('error_reporting');
 Route::post('/hiba_bekuldes', 'ErrorController@submit')->name('error_sending');
+
+// Phone verification routes // TODO probably shoud throttle requests
+Route::name('phoneverify.send')
+    ->post('/phoneverification', 'PhoneVerificationController@sendCode');
+
+Route::name('phoneverify.check')
+     ->post('/phoneverification', 'PhoneVerificationController@checkCode');

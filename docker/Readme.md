@@ -42,4 +42,9 @@ Open your hosts file (`sudo nano /etc/hosts`) and add the following entry at the
  - starting the stack: `docker-compose start` 
  - rebuild the stack with `docker-compose down` then `docker-compose up`; 
  (!) Warning this will remove all the cached data in redis.
+ - List running containers in stack: `docker-compose ps`
+ - Open shell inside container: `docker exec -it {container_name} /bin/bash`
+ - Install package with composer: open shell inside app container, tipically it's name 
+ will end with __app_1_ (e.g. joszomszedsag_app_1) then run `composer require {package}`
+ - Run artisan command: open shell inside app container then `php artisan {command}`
 
