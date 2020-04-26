@@ -1,4 +1,16 @@
+@php
+  if (Voyager::translatable($items)) {
+        $items = $items->load('translations');
+    }
+
+@endphp
 @foreach($items as $menu_item)
+    @php
+        $originalItem = $menu_item;
+            if (Voyager::translatable($menu_item)) {
+                $menu_item = $menu_item->translate($options->locale);
+            }
+    @endphp
     @if($menu_item->link() == route('admin_new_help_request', [], false))
         <li class="app-sidebar__heading">{{ __('dashboard.help_requests') }}</li>
     @elseif($menu_item->link() == route('admin_volunteers_list', [], false))

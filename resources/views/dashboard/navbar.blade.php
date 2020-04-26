@@ -30,10 +30,8 @@
     </div>
     <div class="app-header__menu">
                 <span>
-                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
+                    <button type="button" class="waves-effect btn-small mobile-toggle-header-nav">
+                        Settings
                     </button>
                 </span>
     </div>
@@ -59,7 +57,15 @@
                 <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                         <div class="widget-content-left text-center">
-                            <a href="{{ route('logout') }}" class="btn red" onclick="event.preventDefault();document.getElementById('logout-form').submit()">{{ __('dashboard.logout') }}</a>
+                            <a class='dropdown-trigger waves-effect btn-small lang-button' data-target='lang_select_dropdown_admin'>
+                                <span class="lang_selector_short_code">{{ language()->getCode() }}</span>
+                            </a>
+                            <ul id="lang_select_dropdown_admin" class="dropdown-content">
+                                @foreach (language()->allowed() as $code => $name)
+                                    <li><a href="{{ language()->back($code) }}">{{ language()->flag($code) }}</a></li>
+                                @endforeach
+                            </ul>
+                            <a href="{{ route('logout') }}" class="btn red" onclick="event.preventDefault();document.getElementById('logout-form').submit()"><i class="material-icons">power_settings_new</i></a>
                             <form id="logout-form" method="post" action="{{route('logout')}}" style="display: none"> @csrf </form>
                         </div>
                     </div>

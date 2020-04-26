@@ -65,10 +65,20 @@
       }
     }
   }
-  .app-header__menu {
-    @media screen and (max-width: 991.98px) {
-      opacity: 0;
-      visibility: hidden;
+
+  .app-header__content {
+    #lang_select_dropdown_admin {
+      height: auto;
+
+      li {
+        min-height: unset;
+
+        a {
+          line-height: unset;
+          padding: 0;
+          text-align: center;
+        }
+      }
     }
   }
 }
