@@ -43,7 +43,9 @@ RUN apk --no-cache add \
     && apk add zstd-dev && yes | pecl install igbinary redis \
     && docker-php-ext-enable igbinary redis \
     # sockets
-    && docker-php-ext-install sockets
+    && docker-php-ext-install sockets \
+    # intl and gettext
+    && apk add icu-dev gettext-dev && docker-php-ext-install intl gettext
     # mongo
     #&& yes | pecl install mongodb && docker-php-ext-enable mongodb
 

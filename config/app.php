@@ -80,7 +80,7 @@
     |
     */
     
-    'locale' => 'hu',
+    'locale' => env('APP_LOCALE', 'en'),
     
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,7 @@
       /*
        * Package Service Providers...
        */
+        Barryvdh\TranslationManager\ManagerServiceProvider::class,
       
       /*
        * Application Service Providers...
@@ -176,7 +177,7 @@
       App\Providers\RouteServiceProvider::class,
       App\Providers\ViewServiceProvider::class,
 
-      \App\Providers\PhoneVerificationServiceProvider::class
+      \App\Providers\PhoneVerificationServiceProvider::class,
     
     ],
     
