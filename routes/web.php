@@ -56,6 +56,9 @@ Route::group(['middleware' => 'language'], function () {
 });
 
 // Phone verification routes // TODO probably shoud throttle requests
+Route::name('phoneverify.form')
+    ->get('/phoneverification', 'PhoneVerificationController@index');
+
 Route::name('phoneverify.send')
     ->post('/phoneverification', 'PhoneVerificationController@sendCode');
 

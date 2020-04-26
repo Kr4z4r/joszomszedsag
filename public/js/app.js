@@ -29942,6 +29942,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/dashboard/style.scss":
+/*!*********************************************!*\
+  !*** ./resources/sass/dashboard/style.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/materialize/materialize.scss":
 /*!*****************************************************!*\
   !*** ./resources/sass/materialize/materialize.scss ***!
@@ -29954,15 +29965,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/materialize/materialize.scss ***!
-  \***********************************************************************************************************/
+/*!*************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/materialize/materialize.scss ./resources/sass/dashboard/style.scss ***!
+  \*************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\_Projects\coronavirus\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! D:\_Projects\coronavirus\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! D:\_Projects\coronavirus\resources\sass\materialize\materialize.scss */"./resources/sass/materialize/materialize.scss");
+__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/resources/sass/materialize/materialize.scss */"./resources/sass/materialize/materialize.scss");
+module.exports = __webpack_require__(/*! /var/www/resources/sass/dashboard/style.scss */"./resources/sass/dashboard/style.scss");
 
 
 /***/ })
