@@ -9,11 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "barryvdh/laravel-translation-manager": "^0.5.8",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
+        "nexmo/client": "^2.0",
         "spatie/laravel-cookie-consent": "^2.12",
         "tcg/voyager": "^1.3"
     },
@@ -56,13 +58,13 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php74 artisan package:discover --ansi"
+            "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
-            "@php74 -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php74 artisan key:generate --ansi"
+            "@php artisan key:generate --ansi"
         ]
     },
     "repositories": {
