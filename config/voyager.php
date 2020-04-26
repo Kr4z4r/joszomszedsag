@@ -100,7 +100,7 @@ return [
         /*
          * Set whether or not the multilingual is supported by the BREAD input.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Select default language
@@ -112,7 +112,7 @@ return [
          */
         'locales' => [
             'hu',
-            //'pt',
+            'en',
         ],
     ],
 
