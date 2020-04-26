@@ -363,6 +363,12 @@ $(document).ready(function(){
         let regex = /(^[0-9]+)(\/[0-9]*[A-z])*\.?/g;
         return new RegExp(regex).test(house_number);
     }
+
+    let dropdowns = document.querySelectorAll('.dropdown-trigger');
+    let dOptions = {
+      hover: true
+    };
+    let dInstances = M.Dropdown.init(dropdowns, dOptions);
 });
 $(window).on('load', function () {
     window.setTimeout(function () {
