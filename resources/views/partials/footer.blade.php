@@ -26,7 +26,7 @@
                 </ul>
             </div>
             <div class="col l4 m4 s12">
-                <h5>{{ __('Hasznos linkek') }}</h5>
+                <h5>{{ __('front.useful_links') }}</h5>
                 <ul>
                     {{ menu('footer') }}
                 </ul>
@@ -35,9 +35,9 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <a class="left" href="{{route('error_reporting')}}">{{ __('Hiba jelentése') }}</a>
+            <a class="left" href="{{route('error_reporting')}}">{{ __('front.error_reporting_title') }}</a>
             <div class="right">
-                <span>&copy; {{ date('Y') }} - {{ __('Jószomszédság Vigyázó Hálózata') }} </span>
+                <span>&copy; {{ date('Y') }} - {{ __('front.jvh_name') }} </span>
                 <a class="right" href="https://joszomszedsag.com" target="_blank">@include('helpers.logo')</a>
             </div>
 

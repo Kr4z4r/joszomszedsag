@@ -8,7 +8,7 @@
             @endif
         </a>
         <ul>
-            <li><a href="#"><a class="waves-effect red btn-large login-button" href="{{ route('login') }}">{{ __('Bejelentkezés') }}</a></a></li>
+            <li><a href="#"><a class="waves-effect red btn-large login-button" href="{{ route('login') }}">{{ __('front.login') }}</a></a></li>
         </ul>
     </div>
 </nav>
