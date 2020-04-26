@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Rules\PhoneNumber;
+use App\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PhoneVerificationRequest extends FormRequest
@@ -14,7 +15,7 @@ class PhoneVerificationRequest extends FormRequest
      */
     public function authorize()
     {
-        return TRUE;
+        return $this->getUser() ? TRUE : FALSE;
     }
 
     /**
@@ -35,5 +36,18 @@ class PhoneVerificationRequest extends FormRequest
             'phone' => ['required', new PhoneNumber],
             'code'  => 'sometimes|min:4'
         ];
+    }
+
+    /**
+     * Get currently registered user
+     * @return User|void
+     */
+    public function getUser()
+    {
+        if( $id = session()->get('registration.user_id') and $user = User::find($id) ){
+            return $user;
+        }
+
+        return NULL;
     }
 }

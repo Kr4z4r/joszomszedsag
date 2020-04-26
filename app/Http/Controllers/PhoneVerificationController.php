@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Rules\PhoneNumber;
 use App\Services\PhoneVerificationService;
-use App\User;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\PhoneVerificationRequest;
-use Nexmo\Client\Exception\Exception;
 
 class PhoneVerificationController extends Controller
 {
 
-
     public function index()
     {
-        return view('forms.phone-verification');
+        if( $id = session()->get('registration.user_id') ){
+            return view('forms.phone-verification');
+        }
+        else{
+            return redirect(route('onkentes-regisztracio'));
+        }
     }
 
     /**
@@ -29,7 +31,6 @@ class PhoneVerificationController extends Controller
         PhoneVerificationService $verificationService
     )
     {
-        $user  = User::find(session()->get('registration.user_id'));
         $phone = PhoneNumber::toDigits($request->get('phone'));
 
         // Check phone number for minimum digits
@@ -38,11 +39,6 @@ class PhoneVerificationController extends Controller
                 // TODO move to phone validator
                 "Phone number should have at least 10 digits. Please include country and region prefix."
             ]]);
-        }
-
-        // Can verify your phone only after registration
-        if( empty($user) ){
-            return redirect(route('/'));
         }
 
         $verificationService->sendCodeViaSMS($phone);
@@ -64,10 +60,7 @@ class PhoneVerificationController extends Controller
         PhoneVerificationService $verificationService
     )
     {
-        /**
-         * @var User $user
-         */
-        $user    = User::find(session()->get('registration.user_id'));
+        $user    = $request->getUser();
         $phoneNr = $request->get('phone');
         $code    = $request->get('code');
 
