@@ -14,7 +14,7 @@ return [
   ////
   // forms/volunteer.blade.php
   ////
-  'volunteer_form_title' => 'Volunteer for guardian',
+  'volunteer_form_title' => 'Volunteer',
   'birthday_age_limit_helper_text' => 'Age between 17 and 59',
   'has_car' => 'I have a car:',
   'availability' => 'Availability:',
@@ -32,9 +32,9 @@ return [
   'profile_subtitle' => 'My profile',
   'suspend_volunteer_status' => 'Suspend volunteering',
   'suspend_volunteer_status_helper_text' => 'Travel, Sickness, etc.',
-  'apply_for_volunteer' => 'Volunteer to be a guardian',
+  'apply_for_volunteer' => 'Apply to volunteer',
   'my_user_data' => 'User Data',
-  'my_volunteer_data' => 'Guardian Data',
+  'my_volunteer_data' => 'Volunteer Data',
 
   ////
   // dashboard/help_request/new_request.blade.php
