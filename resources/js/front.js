@@ -365,10 +365,7 @@ $(document).ready(function(){
     }
 
     let dropdowns = document.querySelectorAll('.dropdown-trigger');
-    let dOptions = {
-      hover: true
-    };
-    let dInstances = M.Dropdown.init(dropdowns, dOptions);
+    let dInstances = M.Dropdown.init(dropdowns, {alignment: 'right'});
 });
 $(window).on('load', function () {
     window.setTimeout(function () {
