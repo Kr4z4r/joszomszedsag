@@ -17,6 +17,7 @@ return [
   ////
   // dashboard/view.blade.php
   ////
+  'home_page' => 'Kezdőlap',
   'logout' => 'Kijelentkezés',
   'profile_menu_subheading' => 'Frissítse adatait, hogy a lehető legpontosabban működjön a rendszer',
   'new_help_request' => 'Új segítségkérés',

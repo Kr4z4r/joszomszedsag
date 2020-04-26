@@ -3,7 +3,7 @@
 @section('page_title')
     <div class="page-title-icon"><i class="pe-7s-home icon-gradient bg-white"></i></div>
     <div>
-        {{ __('Kezdőlap') }}
+        {{ __('dashboard.home_page') }}
         <div class="page-title-subheading"></div>
     </div>
 @endsection

@@ -4,67 +4,67 @@ return [
   ////
   // forms/helprequest.blade.php
   ////
-  'help_request_form_title' => 'Segítség kérése',
-  'has_corona' => 'Koronavírussal fertőzött vagyok',
-  'in_quarantine' => 'Karanténban vagyok',
-  'has_chronic' => 'Egyéb krónikus megbetegedésem van',
-  'is_healthy' => 'Egyik sem (Egészséges vagyok)',
-  'help_reason' => 'Segítségkérés oka',
+  'help_request_form_title' => 'Help request',
+  'has_corona' => 'I\'m infected with COVID-19',
+  'in_quarantine' => 'I\'m in quarantine',
+  'has_chronic' => 'I have other chronic disease',
+  'is_healthy' => 'None of the above(I\'m healthy)',
+  'help_reason' => 'Reason of the request',
 
   ////
   // forms/volunteer.blade.php
   ////
-  'volunteer_form_title' => 'Önkéntes jelentkezés Vigyázónak',
-  'birthday_age_limit_helper_text' => 'Életkor min. 17 év, max. 59 év',
-  'has_car' => 'Autóval rendelkezem:',
-  'availability' => 'Rendelkezésre állás:',
-  'help_types' => 'Vállalt segítségnyújtás',
-  'volunteer_area' => 'Vállalt körzet(Kérem saját lakóhelyéről gyalogosan elérhető körzetet válasszon, max. 5 utca):',
-  'from_house_number' => 'Házszám(-tól)',
-  'to_house_number' => 'Házszám(-ig)',
-  'leave_empty_for_whole_street' => 'Hagyja üresen, ha az egész utcát vállalja.',
-  'privacy_policy_and_jvh_rules' => 'Elolvastam és elfogadom az Adatvédelmi Szabályzatot és elolvastam a Jószomszédság Vigyázó Hálózat szabályait. Kijelentem, hogy a vállalt feladataimat legjobb tudásom szerint elvégzem, ha akadály adódik, azonnal jelzem.',
-  'i_am_healthy' => 'Kijelentem hogy a jelentkezés pillanatában egészséges vagyok és a mindenkori járványügyi szabályokat szigorúan betartom. Amennyiben bármilyen fertőzés esélye áll fent, nem veszek részt további önkéntességben.',
+  'volunteer_form_title' => 'Volunteer for guardian',
+  'birthday_age_limit_helper_text' => 'Age between 17 and 59',
+  'has_car' => 'I have a car:',
+  'availability' => 'Availability:',
+  'help_types' => 'I can help in',
+  'volunteer_area' => 'Area(s) I can help in:',
+  'from_house_number' => 'House number(from)',
+  'to_house_number' => 'House number(to)',
+  'leave_empty_for_whole_street' => 'Leave empty for the whole street',
+  'privacy_policy_and_jvh_rules' => 'I\'ve read and accept the Privacy Policy and the Jószomszédság Vigyázó Hálózat\'s rules. I will try to finish my accepted tasks as good as possible, if there are any problems, I will notify the other parties.',
+  'i_am_healthy' => 'I am healthy and I will oblige to every law and health precautions. If there is any chance of an infection, I\'ll stop volunteering.',
 
   ////
   // dashboard/profile.blade.php
   ////
-  'profile_subtitle' => 'Saját profil és vállalt segítségkérések',
-  'suspend_volunteer_status' => 'Önkéntesség felfüggesztése',
-  'suspend_volunteer_status_helper_text' => 'Tartós távollét, betegség(pozitív vírus teszt, karantén, stb), egyéb akadályoztatás esetén.',
-  'apply_for_volunteer' => 'Jelentkezés Vigyázónak',
-  'my_user_data' => 'Felhasználói adataim',
-  'my_volunteer_data' => 'Vigyázói adataim',
+  'profile_subtitle' => 'My profile',
+  'suspend_volunteer_status' => 'Suspend volunteering',
+  'suspend_volunteer_status_helper_text' => 'Travel, Sickness, etc.',
+  'apply_for_volunteer' => 'Volunteer to be a guardian',
+  'my_user_data' => 'User Data',
+  'my_volunteer_data' => 'Guardian Data',
 
   ////
   // dashboard/help_request/new_request.blade.php
   ////
-  'save_record' => 'Rögzítés',
-  'max_3_open_requests' => 'Egyszerre max. 3 teljesítetlen segítségkérése lehet!',
+  'save_record' => 'Save',
+  'max_3_open_requests' => 'You can simultaneously only have max. 3 open help requests.',
 
   ////
   // Universal form texts
   ////
-  'family_name' => 'Családnév',
-  'surname' => 'Keresztnév',
-  'nickname' => 'Becenév/Megszólítás',
-  'nickname_helper_text' => 'Ezt minden más felhasználó látja, ez alapján "azonosítják" Önt!',
-  'birth_year' => 'Születési Év',
+  'family_name' => 'Family name',
+  'surname' => 'Surname',
+  'nickname' => 'Nickname',
+  'nickname_helper_text' => 'Everyone can see this.',
+  'birth_year' => 'Year of birth',
   'email' => 'E-mail',
-  'phone' => 'Telefon',
-  'mobile' => 'Mobil',
-  'phone_helper_text' => 'Hibás vagy üres telefonszám',
-  'facebook_profile' => 'Facebook profil',
-  'post_code' => 'Irányítószám',
-  'city' => 'Város',
-  'street' => 'Utca',
-  'house_number' => 'Házszám',
-  'no' => 'Nem',
+  'phone' => 'Phone',
+  'mobile' => 'Mobile',
+  'phone_helper_text' => 'Bad or empty phone number',
+  'facebook_profile' => 'Facebook profile',
+  'post_code' => 'Post code',
+  'city' => 'City',
+  'street' => 'Street',
+  'house_number' => 'House number',
+  'no' => 'No',
   'yes' => 'Yes',
-  'please_choose' => 'Kérem válasszon',
-  'situation_short_description' => 'Szituáció rövid leírása',
-  'privacy_policy' => 'Elolvastam és elfogadom az Adatvédelmi Szabályzatot.',
-  'register_button' => 'Regisztráció',
-  'save' => 'Mentés',
+  'please_choose' => 'Please choose',
+  'situation_short_description' => 'Short description of the situation',
+  'privacy_policy' => 'I\'ve read and accept the Privacy Policy.',
+  'register_button' => 'Register',
+  'save' => 'Save',
 
 ];

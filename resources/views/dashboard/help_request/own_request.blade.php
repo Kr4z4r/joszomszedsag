@@ -53,7 +53,7 @@
         <thead>
         <tr>
             <th>{{ __('dashboard.done') }}</th>
-            <th>{{ __('dash.name_slash_address') }}</th>
+            <th>{{ __('dashboard.name_slash_address') }}</th>
             <th></th>
         </tr>
         </thead>

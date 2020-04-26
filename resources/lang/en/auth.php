@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Hibás email cím vagy jelszó',
-    'throttle' => 'Túl sok bejelentkezési kísérlet! Kérjük próbálja meg :seconds másodperc múlva!',
+    'failed' => 'Email or password is not valid!',
+    'throttle' => 'Too many login attempts! Please try again after :seconds seconds!',
 
 ];
