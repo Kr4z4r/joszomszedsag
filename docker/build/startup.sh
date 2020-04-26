@@ -38,6 +38,10 @@ if [ ! -f /var/www/.env ]; then
     cp /var/www/.env.example /var/www/.env
     php artisan cache:clear
     php artisan key:generate
+
+    # TODO install voyager and create voyager user
+    #php artisan voyager:install
+    #php artisan voyager:admin admin@localhost.com --create
 fi
 
 # Run migrations

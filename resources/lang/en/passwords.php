@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset' => 'A jelszó helyreállítás sikeres volt!',
-    'sent' => 'Elküldtük Önnek az emailt a helyreállító linkkel!',
-    'throttled' => 'Kérem várjon mielőtt újrapróbálkozna!.',
-    'token' => 'A jelszó helyreállításhoz használt token nem érvényes.',
-    'user' => "Nem találtunk felhasználót ehhez az email címhez",
+    'reset' => 'Your password has been reset!',
+    'sent' => 'We have emailed your password reset link!',
+    'throttled' => 'Please wait before retrying.',
+    'token' => 'This password reset token is invalid.',
+    'user' => "We can't find a user with that email address.",
 
 ];

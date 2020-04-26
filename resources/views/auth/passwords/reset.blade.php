@@ -7,7 +7,7 @@
             <div class="card-panel hoverable">
                 <div class="card-content">
                     <div class="row">
-                        <h4 class="card-title center-align">{{ __('Jelszó visszaállítás') }}</h4>
+                        <h4 class="card-title center-align">{{ __('auth.password_recovery') }}</h4>
                     </div>
                     <div class="row">
                         @if (session('status'))
@@ -23,7 +23,7 @@
                         <input type="hidden" name="token" value="{{ $token }}">
                         <div class="input-field col s12">
                             <input id="email" type="email" class="validate form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail cím') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('auth.email') }}</label>
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -32,7 +32,7 @@
                         </div>
                         <div class="input-field col s12 l6">
                             <input id="password" type="password" class="validate form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Jelszó') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('auth.password') }}</label>
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -41,10 +41,10 @@
                         </div>
                         <div class="input-field col s12 l6">
                             <input id="password-confirm" type="password" class="validate form-control" name="password_confirmation" required autocomplete="new-password">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Jelszó újra') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('auth.repeat_password') }}</label>
                         </div>
                         <div class="input-field col s12 m12 center-align">
-                            <button type="submit" class="btn btn-large btn-primary red z-depth-1" id="reset_btn"><i class="material-icons right">send</i>{{ __('Mentés') }}</button>
+                            <button type="submit" class="btn btn-large btn-primary red z-depth-1" id="reset_btn"><i class="material-icons right">send</i>{{ __('auth.save') }}</button>
                         </div>
                     </form>
                 </div>

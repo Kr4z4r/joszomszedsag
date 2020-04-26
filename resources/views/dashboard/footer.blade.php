@@ -4,20 +4,20 @@
             <div class="app-footer-left">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="{{ route('legal') }}">{{ __('Jogi tájékoztató') }}</a>
+                        <a href="{{ route('legal') }}">{{ __('dashboard.legal_brief') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('privacy') }}">{{ __('Adatvédelmi Nyilatkozat') }}</a>
+                        <a href="{{ route('privacy') }}">{{ __('dashboard.privacy_policy') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('cookie') }}">{{ __('Cookie használati szabályzat') }}</a>
+                        <a href="{{ route('cookie') }}">{{ __('dashboard.cookie_policy') }}</a>
                     </li>
                 </ul>
             </div>
             <div class="app-footer-right">
                 <ul class="nav">
                     <li class="nav-item">
-                        <span>&copy; {{ date('Y') }} - {{ __('Jószomszédság Vigyázó Hálózata') }} </span>
+                        <span>&copy; {{ date('Y') }} - {{ __('dashboard.jvh_name') }} </span>
                         <a class="right" href="https://joszomszedsag.com" target="_blank">@include('helpers.logo')</a>
                     </li>
                 </ul>

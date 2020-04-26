@@ -54,3 +54,10 @@ Route::group(['middleware' => 'language'], function () {
   Route::post('/hiba_bekuldes', 'ErrorController@submit')->name('error_sending');
 
 });
+
+// Phone verification routes // TODO probably shoud throttle requests
+Route::name('phoneverify.send')
+    ->post('/phoneverification', 'PhoneVerificationController@sendCode');
+
+Route::name('phoneverify.check')
+     ->post('/phoneverification/check', 'PhoneVerificationController@checkCode');

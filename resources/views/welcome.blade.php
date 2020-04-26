@@ -7,10 +7,10 @@
                 <div class="card-panel">
                     <div class="row">
                         <div class="col s12 l9">
-                            <h1>{{ __('Drága Magyar Embertársak!') }}</h1>
-                            <p>{{ __('Sokunkban felmerül a kérdés, hogyha a jövőben unokáink megkérdeznek minket: nagypapa-nagymama Te mit tettél a koronavírus járvány idején? Akkor mit fogunk felelni? Én azt akarom majd mondani, hogy segítettem, amennyi az erőmből tellett. Se nem többet, se nem kevesebbet.') }}</p>
-                            <p>{{ __('Érezzük, hogy nehéz időket élünk, valamit tennünk kell. Itt az idő, a lehetőség és egyben kötelesség, hogy megszervezzük a Jószomszédságok Vigyázó Hálózatát. Tegyünk a közelünkben lakó rászorulókért!!!') }}</p>
-                            <p class="font-weight-bold">{{ __('Mert senki sem maradhat egyedül.') }}</p>
+                            <h1>{{ __('front.introduction_greeting') }}</h1>
+                            <p>{{ __('front.introduction_block_1') }}</p>
+                            <p>{{ __('front.introduction_block_2') }}</p>
+                            <p class="font-weight-bold">{{ __('front.introduction_block_3') }}</p>
                         </div>
                         <div class="col s12 l3">
                             <div class="logo center-align">
@@ -29,10 +29,10 @@
         <div class="col s12 l6">
             <div class="card help_card hoverable">
                 <div class="card-content center-align">
-                    <span class="card-title">{{ __('Kérjen segítséget!') }}</span>
-                    <p class="left-align">{{ __('Ha segítségre van szüksége, mert Ön idős, beteg, karanténban van vagy más problémája van, kérjen segítséget az Ön közelében élő Vigyázótól, aki felveszi Önnel a kapcsolatot.') }}</p>
+                    <span class="card-title">{{ __('front.ask_for_help') }}</span>
+                    <p class="left-align">{{ __('front.ask_for_help_description') }}</p>
                     <p></p>
-                    <a class="waves-effect waves-light btn-large" href="{{ route('segitseg-keres') }}"><span>{{ __('Segítségkérés') }}</span></a>
+                    <a class="waves-effect waves-light btn-large" href="{{ route('segitseg-keres') }}"><span>{{ __('front.request_help_button') }}</span></a>
                 </div>
             </div>
         </div>
@@ -45,9 +45,9 @@
         <div class="col s12 l6">
             <div class="card volunteer_card hoverable">
                 <div class="card-content center-align">
-                    <span class="card-title">{{ __('Jelentkezzen Vigyázónak!') }}</span>
-                    <p class="left-align">{{ __('Regisztráljon Ön is Vigyázónak, ha segítséget nyújtana rászoruló szomszédainak lakókörzetében!') }}</p>
-                    <a class="waves-effect waves-light btn-large" href="{{ route('onkentes-regisztracio') }}"><span>{{ __('Jelentkezés Vigyázónak') }}</span></a>
+                    <span class="card-title">{{ __('front.volunteer') }}</span>
+                    <p class="left-align">{{ __('front.volunteer_desc') }}</p>
+                    <a class="waves-effect waves-light btn-large" href="{{ route('onkentes-regisztracio') }}"><span>{{ __('front.volunteer_button') }}</span></a>
                 </div>
             </div>
         </div>
