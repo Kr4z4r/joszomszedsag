@@ -7,7 +7,7 @@
                 <div class="card-panel hoverable">
                     <div class="card-content">
                         <div class="row">
-                            <h4 class="card-title center-align">{{ __('Jelszó visszaállítás') }}</h4>
+                            <h4 class="card-title center-align">{{ __('auth.password_recovery') }}</h4>
                         </div>
                         <div class="row">
                             @if (session('status'))
@@ -21,7 +21,7 @@
                                 @csrf
                                 <div class="input-field col s12 m12">
                                     <input id="email" type="email" class="validate form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail cím') }}</label>
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('auth.email') }}</label>
                                     @error('email')
                                     <span class="invalid-feedback red-text" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -29,7 +29,7 @@
                                     @enderror
                                 </div>
                                 <div class="input-field col s12 center-align">
-                                    <button type="submit" id="password_btn" class="btn btn-large red"><i class="material-icons right">send</i>{{ __('Email küldése') }}</button>
+                                    <button type="submit" id="password_btn" class="btn btn-large red"><i class="material-icons right">send</i>{{ __('auth.send_email') }}</button>
                                 </div>
                             </form>
                         </div>
