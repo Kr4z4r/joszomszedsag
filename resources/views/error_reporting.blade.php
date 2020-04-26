@@ -7,7 +7,7 @@
         <div class="col s12">
             <form method="post" action="{{route('error_sending')}}" class="card-panel hoverable" autocomplete="{{ Str::random(16) }}">
                 <div class="row">
-                    <h4 class="center-align">{{ __('Hibabejelentés') }}</h4>
+                    <h4 class="center-align">{{ __('front.error_reporting_title') }}</h4>
                 </div>
                 @if(session('error_status'))
                     <div class="row">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12 center-align">
-                        <button class="waves-effect waves-light btn-large red" type="submit" name="action">{{ __('Hiba beküldése') }}
+                        <button class="waves-effect waves-light btn-large red" type="submit" name="action">{{ __('front.send_error_report_button') }}
                             <i class="material-icons right">send</i>
                         </button>
                     </div>

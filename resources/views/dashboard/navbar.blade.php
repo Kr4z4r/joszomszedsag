@@ -59,7 +59,7 @@
                 <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                         <div class="widget-content-left text-center">
-                            <a href="{{ route('logout') }}" class="btn red" onclick="event.preventDefault();document.getElementById('logout-form').submit()">{{ __('Kijelentkezés') }}</a>
+                            <a href="{{ route('logout') }}" class="btn red" onclick="event.preventDefault();document.getElementById('logout-form').submit()">{{ __('dashboard.logout') }}</a>
                             <form id="logout-form" method="post" action="{{route('logout')}}" style="display: none"> @csrf </form>
                         </div>
                     </div>
