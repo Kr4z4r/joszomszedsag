@@ -5,6 +5,7 @@
     <meta name="token" content="{{ Session::token() }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noimageindex, nofollow, nosnippet">
     <title>@yield('title', 'Kezdőlap') - {{ \TCG\Voyager\Facades\Voyager::setting('site.title') }}</title>
     @include('helpers.css')
 </head>
