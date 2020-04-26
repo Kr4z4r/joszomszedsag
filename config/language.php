@@ -103,7 +103,7 @@ return [
     | This option indicates the controller to be used.
     |
     */
-    'controller'    => 'Akaunting\Language\Controllers\Language',
+    'controller'    => 'App\Http\Controllers\LanguageController',
 
     /*
     |--------------------------------------------------------------------------
