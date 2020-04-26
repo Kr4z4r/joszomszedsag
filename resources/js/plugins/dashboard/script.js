@@ -178,4 +178,7 @@ $(document).ready(function() {
             }
         })
     });
+
+    let dropdowns = document.querySelectorAll('.dropdown-trigger');
+    let dInstances = M.Dropdown.init(dropdowns, {alignment: 'right'});
 });

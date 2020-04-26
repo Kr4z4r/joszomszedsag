@@ -2,6 +2,9 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/materialize.css": "/css/materialize.css",
+    "/css/dashboard/style.css": "/css/dashboard/style.css",
+    "/js/dashboard/script.js": "/js/dashboard/script.js",
     "/js/front.js": "/js/front.js",
-    "/js/materialize.min.js": "/js/materialize.min.js"
+    "/js/materialize.min.js": "/js/materialize.min.js",
+    "/js/plugins.js": "/js/plugins.js"
 }
