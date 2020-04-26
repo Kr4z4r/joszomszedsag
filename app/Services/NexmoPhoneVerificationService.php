@@ -7,7 +7,9 @@
 
 namespace App\Services;
 
-use Carbon\Carbon;
+use App\Rules\PhoneNumber;
+use Illuminate\Support\Facades\Log;
+use Nexmo\Client\Exception\Request as NexmoRequestException;
 
 class NexmoPhoneVerificationService implements PhoneVerificationService{
 
@@ -73,7 +75,15 @@ class NexmoPhoneVerificationService implements PhoneVerificationService{
      */
     public function checkCode($phoneNr, $code ): bool
     {
-        $this->client->verify()->check($this->getVerification($phoneNr), $code);
+        try {
+            $this->client->verify()->check($this->getVerification($phoneNr), $code);
+            return TRUE;
+        }
+        catch (NexmoRequestException $exception) {
+            Log::notice("Verification failed for number {$phoneNr}:" . $exception->getMessage());
+        }
+
+        return FALSE;
     }
 
     /**
@@ -86,15 +96,15 @@ class NexmoPhoneVerificationService implements PhoneVerificationService{
     protected function registerVerification($phoneNr, \Nexmo\Verify\Verification $verification)
     {
         cache()->set(
-            "{$phoneNr}.verification_id",
+            ( PhoneNumber::toDigits($phoneNr) . ".verification_id" ),
             $verification->getRequestId(),
-            now()->addMinutes(10)
+            now()->addMinutes(15)
         );
     }
 
     protected function verificationId($phoneNr)
     {
-        return cache()->get("{$phoneNr}.verification_id");
+        return cache()->get(PhoneNumber::toDigits($phoneNr) . ".verification_id");
     }
 
     protected function getVerification($phoneNr)

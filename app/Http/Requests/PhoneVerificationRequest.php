@@ -14,7 +14,14 @@ class PhoneVerificationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return TRUE;
+    }
+
+    /**
+     * @return array|string[]
+     */
+    public function messages() {
+        return ['code.min' => 'Please enter a valid code.'];
     }
 
     /**
@@ -26,7 +33,7 @@ class PhoneVerificationRequest extends FormRequest
     {
         return [
             'phone' => ['required', new PhoneNumber],
-            'code'  => 'nullable|min:4'
+            'code'  => 'sometimes|min:4'
         ];
     }
 }

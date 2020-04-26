@@ -53,6 +53,9 @@ Route::get('/hibabejelentes', 'ErrorController@index')->name('error_reporting');
 Route::post('/hiba_bekuldes', 'ErrorController@submit')->name('error_sending');
 
 // Phone verification routes // TODO probably shoud throttle requests
+Route::name('phoneverify.form')
+    ->get('/phoneverification', 'PhoneVerificationController@index');
+
 Route::name('phoneverify.send')
     ->post('/phoneverification', 'PhoneVerificationController@sendCode');
 

@@ -43,6 +43,7 @@ class FrontIndexController extends Controller {
   public function register(Request $request) {
     if($request->user_role == 6) {
       //VOLUNTEER
+        // TODO use Form requests instead
       $this->validate($request,[
         'first_name' => 'required|regex:/^[\pL\pM\pN\s\.\-]+$/u',
         'last_name' => 'required|regex:/^[\pL\pM\pN\s\.\-]+$/u',
@@ -69,9 +70,21 @@ class FrontIndexController extends Controller {
       $user = $this->saveUserBasic($request);
       $volunteer_data = $this->saveVolunteerData($request, $user->id);
       $volunteer_address = $this->saveVolunteerAddress($request, $volunteer_data->id);
+
+      // Save new user id in session
+      session()->put('registration.user_id', $user->id);
   
       if ($user && $volunteer_data && $volunteer_address) {
         $this->sendRegistrationEmail($user);
+
+        if( config('services.nexmo.key') ){
+            // Redirect to phone verification route
+            // TODO this should be an option in admin,
+            return redirect(
+                route('phoneverify.form', ['phone'=>$request->get('phone')])
+            );
+        }
+
         return redirect(route('login'));
       }
       else return redirect(route('onkentes-regisztracio'));

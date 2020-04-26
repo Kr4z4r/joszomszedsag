@@ -21,7 +21,17 @@
      * @var array
      */
     protected $fillable = [
-      'first_name', 'last_name', 'email', 'phone_number', 'password', 'avatar', 'settings', 'date_birth', 'description', 'facebook_profile', 'facebook_group'
+        'first_name',
+        'last_name',
+        'email',
+        'phone_number',
+        'password',
+        'avatar',
+        'settings',
+        'date_birth',
+        'description',
+        'facebook_profile',
+        'facebook_group'
     ];
     
     /**
@@ -30,7 +40,8 @@
      * @var array
      */
     protected $hidden = [
-      'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
     
     /**
@@ -39,6 +50,7 @@
      * @var array
      */
     protected $casts = [
+      'phone_verified_at' => 'datetime',
       'email_verified_at' => 'datetime',
     ];
     
