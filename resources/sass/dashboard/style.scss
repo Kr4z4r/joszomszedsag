@@ -219,6 +219,10 @@ button {
       color: $dark_red;
       text-decoration: none;
     }
+    
+    svg {
+      display: none;
+    }
   }
 }
 .dashboard-row {
